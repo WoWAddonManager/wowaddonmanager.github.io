@@ -1,0 +1,26 @@
+var NAVTREEINDEX0 =
+{
+"_h_t_t_p_handler_8cpp.html":[0,0,0,0,1],
+"_h_t_t_p_handler_8cpp_source.html":[0,0,0,0,1],
+"addon_8cpp.html":[0,0,0,0,0],
+"addon_8cpp.html#a2b7c5a160e10a6c60b2c02b802c99f63":[0,0,0,0,0,0],
+"addon_8cpp_source.html":[0,0,0,0,0],
+"dir_89b39024e5cf270042eb8fca246de1c4.html":[0,0,0,0],
+"dir_d60f0656afeec9d139ae74cbf60ecc9d.html":[0,0,0],
+"files.html":[0,0],
+"globals.html":[0,1,0],
+"globals_func.html":[0,1,1],
+"index.html":[],
+"main_8cpp.html":[0,0,0,0,2],
+"main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97":[0,0,0,0,2,0],
+"main_8cpp_source.html":[0,0,0,0,2],
+"mainwindow_8cpp.html":[0,0,0,0,3],
+"mainwindow_8cpp_source.html":[0,0,0,0,3],
+"pages.html":[],
+"settingsmanager_8cpp.html":[0,0,0,0,4],
+"settingsmanager_8cpp_source.html":[0,0,0,0,4],
+"upload__addon__dialog_8cpp.html":[0,0,0,0,5],
+"upload__addon__dialog_8cpp_source.html":[0,0,0,0,5],
+"utils_8cpp.html":[0,0,0,0,6],
+"utils_8cpp_source.html":[0,0,0,0,6]
+};
