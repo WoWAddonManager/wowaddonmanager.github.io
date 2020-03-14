@@ -1,4 +1,4 @@
 var files_dup =
 [
-    [ "wam-client", "dir_d60f0656afeec9d139ae74cbf60ecc9d.html", "dir_d60f0656afeec9d139ae74cbf60ecc9d" ]
+    [ "wam", "dir_d35a4bf3b0c64e0c9e71eb15263396dc.html", "dir_d35a4bf3b0c64e0c9e71eb15263396dc" ]
 ];

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>WoW Addon Manager Client: /home/jordan/Nextcloud/projects/wam-client/src/mainwindow.cpp Source File</title>
+<title>WoW Addon Manager Client: /home/jordan/Nextcloud/projects/wam/src/mainwindow.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -87,90 +87,126 @@ $(document).ready(function(){initNavTree('mainwindow_8cpp_source.html',''); init
 <div class="title">mainwindow.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="mainwindow_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;mainwindow.h&quot;</span></div>
+<a href="mainwindow_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="mainwindow_8h.html">mainwindow.h</a>&quot;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;QFileDialog&gt;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QtCore/QStringListModel&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QtWidgets/QPushButton&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;addon.h&quot;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;settingsmanager.h&quot;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;upload_addon_dialog.h&quot;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;MainWindow::MainWindow(QWidget *parent, SettingsManager &amp;settings) :</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    QMainWindow(parent),</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    ui(new Ui::MainWindow) {</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">auto</span> dialog = std::make_shared&lt;upload_addon_dialog&gt;(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="utils_8h.html">utils.h</a>&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="addon_8h.html">addon.h</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="settingsmanager_8h.html">settingsmanager.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="upload__addon__dialog_8h.html">upload_addon_dialog.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="response_8h.html">response.h</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="class_main_window.html#a74e8d57ce6ecbcaa23c81d2fc5f2a6cc">   11</a></span>&#160;<a class="code" href="class_main_window.html#a74e8d57ce6ecbcaa23c81d2fc5f2a6cc">MainWindow::MainWindow</a>(QWidget *parent, <a class="code" href="class_settings_manager.html">SettingsManager</a> &amp;settings) :</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    QMainWindow(parent),</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    ui(new <a class="code" href="namespace_ui.html">Ui</a>::<a class="code" href="class_main_window.html">MainWindow</a>) {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">auto</span> dialog = <span class="keyword">new</span> <a class="code" href="classupload__addon__dialog.html">upload_addon_dialog</a>(<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    ui-&gt;setupUi(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    ui-&gt;classic_table-&gt;hide();</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    ui-&gt;ptr_table-&gt;hide();</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="class_main_window.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code" href="class_ui___main_window.html#acf4a0872c4c77d8f43a2ec66ed849b58">setupUi</a>(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="class_main_window.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code" href="class_ui___main_window.html#a1cbe17a99fb81b327b2f9c53565ec78b">classic_table</a>-&gt;hide();</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="class_main_window.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code" href="class_ui___main_window.html#a49da3d40aeebe8a1f13eadf5116c5e6f">ptr_table</a>-&gt;hide();</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="comment">//ui-&gt;retail_table-&gt;horizontalHeader()-&gt;setStretchLastSection(true);</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 4;  i++){</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        ui-&gt;retail_table-&gt;horizontalHeader()-&gt;setSectionResizeMode(i, QHeaderView::Stretch);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        ui-&gt;classic_table-&gt;horizontalHeader()-&gt;setSectionResizeMode(i, QHeaderView::Stretch);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        ui-&gt;ptr_table-&gt;horizontalHeader()-&gt;setSectionResizeMode(i, QHeaderView::Stretch);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <a class="code" href="class_main_window.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code" href="class_ui___main_window.html#a5b7c1accc4de00054483398523d438ef">retail_table</a>-&gt;horizontalHeader()-&gt;setSectionResizeMode(i, QHeaderView::Stretch);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="class_main_window.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code" href="class_ui___main_window.html#a1cbe17a99fb81b327b2f9c53565ec78b">classic_table</a>-&gt;horizontalHeader()-&gt;setSectionResizeMode(i, QHeaderView::Stretch);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <a class="code" href="class_main_window.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code" href="class_ui___main_window.html#a49da3d40aeebe8a1f13eadf5116c5e6f">ptr_table</a>-&gt;horizontalHeader()-&gt;setSectionResizeMode(i, QHeaderView::Stretch);</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    }</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    ui-&gt;retail_table-&gt;setColumnWidth(4, 80);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    ui-&gt;classic_table-&gt;setColumnWidth(4, 80);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    ui-&gt;ptr_table-&gt;setColumnWidth(4, 80);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="class_main_window.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code" href="class_ui___main_window.html#a5b7c1accc4de00054483398523d438ef">retail_table</a>-&gt;setColumnWidth(4, 80);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="class_main_window.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code" href="class_ui___main_window.html#a1cbe17a99fb81b327b2f9c53565ec78b">classic_table</a>-&gt;setColumnWidth(4, 80);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="class_main_window.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code" href="class_ui___main_window.html#a49da3d40aeebe8a1f13eadf5116c5e6f">ptr_table</a>-&gt;setColumnWidth(4, 80);</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    ui-&gt;tabWidget-&gt;setCurrentIndex(0);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="class_main_window.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code" href="class_ui___main_window.html#a3260b943854b841c986f47c4726ee7f9">tabWidget</a>-&gt;setCurrentIndex(0);</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    connect(ui-&gt;set_wow_path_btn, &amp;QPushButton::clicked, [&amp;]() {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        QString file_path = QFileDialog::getExistingDirectory(this, <span class="stringliteral">&quot;Select WoW Folder&quot;</span>);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        settings.set_base_wow_path(file_path.toStdString());</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        settings.set_wow_folder_paths();</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        ui-&gt;lineEdit-&gt;setText(QString::fromStdString(settings.get_base_wow_path()));</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    });</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    connect(ui-&gt;wow_version_combo_box,  <span class="keyword">static_cast&lt;</span><span class="keywordtype">void</span> (QComboBox::*)(<span class="keyword">const </span>QString&amp;)<span class="keyword">&gt;</span>(&amp;QComboBox::currentIndexChanged), [<span class="keyword">this</span>](<span class="keyword">const</span> QString&amp; tab) {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        swap_addon_list(tab);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    });</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    connect(ui-&gt;actionQuit, &amp;QAction::triggered, [&amp;]() {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        exit(0);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    });</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    connect(ui-&gt;actionUploadAddon, &amp;QAction::triggered, [dialog]() {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        dialog-&gt;show();</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    });</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    fill_in_settings(settings);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="class_main_window.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code" href="class_ui___main_window.html#a5b7c1accc4de00054483398523d438ef">retail_table</a>-&gt;setItem(0,0,<span class="keyword">new</span> QTableWidgetItem(<span class="stringliteral">&quot;Hello World!&quot;</span>));</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">auto</span> addons = <a class="code" href="class_addon.html#a426cb6d87a80eff6047b3f3f9ba4cfb4">Addon::get_remote_addons</a>().get_data();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="class_main_window.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code" href="class_ui___main_window.html#a5b7c1accc4de00054483398523d438ef">retail_table</a>-&gt;setRowCount(addons.size());</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; addons.size(); i++){</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keyword">auto</span> addon = addons.at(i);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <a class="code" href="class_main_window.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code" href="class_ui___main_window.html#a5b7c1accc4de00054483398523d438ef">retail_table</a>-&gt;setItem(i,0, <span class="keyword">new</span> QTableWidgetItem(addon.m_addonName.c_str()));</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    connect(<a class="code" href="class_main_window.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code" href="class_ui___main_window.html#a12b11920d51f4b69945b212a92b37e6b">set_wow_path_btn</a>, &amp;QPushButton::clicked, [&amp;]() {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        QString file_path = QFileDialog::getExistingDirectory(this, <span class="stringliteral">&quot;Select WoW Folder&quot;</span>);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        settings.set_base_wow_path(file_path.toStdString());</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        settings.set_wow_folder_paths();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        ui-&gt;lineEdit-&gt;setText(QString::fromStdString(settings.get_base_wow_path()));</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    });</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    connect(<a class="code" href="class_main_window.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code" href="class_ui___main_window.html#a00428b3ffe02bc8a2e1b40a2ea7706ca">wow_version_combo_box</a>,  <span class="keyword">static_cast&lt;</span><span class="keywordtype">void</span> (QComboBox::*)(<span class="keyword">const </span>QString&amp;)<span class="keyword">&gt;</span>(&amp;QComboBox::currentIndexChanged), [<span class="keyword">this</span>](<span class="keyword">const</span> QString&amp; tab) {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        swap_addon_list(tab);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    });</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    connect(<a class="code" href="class_main_window.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code" href="class_ui___main_window.html#a188c243f36a2dbc10e4e2a0ad94273b1">actionQuit</a>, &amp;QAction::triggered, [&amp;]() {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        exit(0);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    });</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;MainWindow::~MainWindow() {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">delete</span> ui;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keywordtype">void</span> MainWindow::swap_addon_list(<span class="keyword">const</span> QString &amp;version){</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">if</span>(version == <span class="stringliteral">&quot;Retail&quot;</span>){</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        ui-&gt;classic_table-&gt;hide();</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        ui-&gt;ptr_table-&gt;hide();</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        ui-&gt;retail_table-&gt;show();</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(version == <span class="stringliteral">&quot;Classic&quot;</span>){</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        ui-&gt;retail_table-&gt;hide();</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        ui-&gt;ptr_table-&gt;hide();</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        ui-&gt;classic_table-&gt;show();</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">else</span>  {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        ui-&gt;retail_table-&gt;hide();</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        ui-&gt;classic_table-&gt;hide();</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        ui-&gt;ptr_table-&gt;show();</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="keywordtype">void</span> MainWindow::fill_in_settings(<span class="keyword">const</span> SettingsManager &amp;p_settings) {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    ui-&gt;lineEdit-&gt;setText(QString::fromStdString(p_settings.get_base_wow_path()));</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;}</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    connect(<a class="code" href="class_main_window.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code" href="class_ui___main_window.html#a1f089c2ed838e54c93d7538bd1e6cf65">actionUploadAddon</a>, &amp;QAction::triggered, [&amp;,dialog]() {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        dialog-&gt;show();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    });</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="class_main_window.html#a0011af920eca57c1a5a71c8cb4ed77ba">fill_in_settings</a>(settings);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="class_main_window.html#ad4a8d76bc3f70c392c3c94949d6d51c0">   65</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_main_window.html#ad4a8d76bc3f70c392c3c94949d6d51c0">MainWindow::swap_addon_list</a>(<span class="keyword">const</span> QString &amp;version){</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">if</span>(version == <span class="stringliteral">&quot;Retail&quot;</span>){</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <a class="code" href="class_main_window.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code" href="class_ui___main_window.html#a1cbe17a99fb81b327b2f9c53565ec78b">classic_table</a>-&gt;hide();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <a class="code" href="class_main_window.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code" href="class_ui___main_window.html#a49da3d40aeebe8a1f13eadf5116c5e6f">ptr_table</a>-&gt;hide();</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <a class="code" href="class_main_window.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code" href="class_ui___main_window.html#a5b7c1accc4de00054483398523d438ef">retail_table</a>-&gt;show();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(version == <span class="stringliteral">&quot;Classic&quot;</span>){</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <a class="code" href="class_main_window.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code" href="class_ui___main_window.html#a5b7c1accc4de00054483398523d438ef">retail_table</a>-&gt;hide();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <a class="code" href="class_main_window.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code" href="class_ui___main_window.html#a49da3d40aeebe8a1f13eadf5116c5e6f">ptr_table</a>-&gt;hide();</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <a class="code" href="class_main_window.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code" href="class_ui___main_window.html#a1cbe17a99fb81b327b2f9c53565ec78b">classic_table</a>-&gt;show();</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordflow">else</span>  {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <a class="code" href="class_main_window.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code" href="class_ui___main_window.html#a5b7c1accc4de00054483398523d438ef">retail_table</a>-&gt;hide();</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <a class="code" href="class_main_window.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code" href="class_ui___main_window.html#a1cbe17a99fb81b327b2f9c53565ec78b">classic_table</a>-&gt;hide();</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <a class="code" href="class_main_window.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code" href="class_ui___main_window.html#a49da3d40aeebe8a1f13eadf5116c5e6f">ptr_table</a>-&gt;show();</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="class_main_window.html#a0011af920eca57c1a5a71c8cb4ed77ba">   83</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_main_window.html#a0011af920eca57c1a5a71c8cb4ed77ba">MainWindow::fill_in_settings</a>(<span class="keyword">const</span> <a class="code" href="class_settings_manager.html">SettingsManager</a> &amp;p_settings) {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <a class="code" href="class_main_window.html#a35466a70ed47252a0191168126a352a5">ui</a>-&gt;<a class="code" href="class_ui___main_window.html#a7a5b9a4633d64f502ce81da3202d828c">lineEdit</a>-&gt;setText(QString::fromStdString(p_settings.<a class="code" href="class_settings_manager.html#aec871a95f9508388b71ad09f6d6316a0">get_base_wow_path</a>()));</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<a class="code" href="class_main_window.html#a1f7d2c56410fc1bfa135bb907d43313f">MainWindow::~MainWindow</a>() = <span class="keywordflow">default</span>;</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="aclassupload__addon__dialog_html"><div class="ttname"><a href="classupload__addon__dialog.html">upload_addon_dialog</a></div><div class="ttdef"><b>Definition:</b> <a href="upload__addon__dialog_8h_source.html#l00009">upload_addon_dialog.h:9</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a74e8d57ce6ecbcaa23c81d2fc5f2a6cc"><div class="ttname"><a href="class_main_window.html#a74e8d57ce6ecbcaa23c81d2fc5f2a6cc">MainWindow::MainWindow</a></div><div class="ttdeci">MainWindow(QWidget *parent, SettingsManager &amp;settings)</div><div class="ttdef"><b>Definition:</b> <a href="mainwindow_8cpp_source.html#l00011">mainwindow.cpp:11</a></div></div>
+<div class="ttc" id="aclass_ui___main_window_html_a1cbe17a99fb81b327b2f9c53565ec78b"><div class="ttname"><a href="class_ui___main_window.html#a1cbe17a99fb81b327b2f9c53565ec78b">Ui_MainWindow::classic_table</a></div><div class="ttdeci">QTableWidget * classic_table</div><div class="ttdef"><b>Definition:</b> <a href="ui__mainwindow_8h_source.html#l00050">ui_mainwindow.h:50</a></div></div>
+<div class="ttc" id="aupload__addon__dialog_8h_html"><div class="ttname"><a href="upload__addon__dialog_8h.html">upload_addon_dialog.h</a></div></div>
+<div class="ttc" id="aclass_ui___main_window_html_a1f089c2ed838e54c93d7538bd1e6cf65"><div class="ttname"><a href="class_ui___main_window.html#a1f089c2ed838e54c93d7538bd1e6cf65">Ui_MainWindow::actionUploadAddon</a></div><div class="ttdeci">QAction * actionUploadAddon</div><div class="ttdef"><b>Definition:</b> <a href="ui__mainwindow_8h_source.html#l00041">ui_mainwindow.h:41</a></div></div>
+<div class="ttc" id="aclass_main_window_html_ad4a8d76bc3f70c392c3c94949d6d51c0"><div class="ttname"><a href="class_main_window.html#ad4a8d76bc3f70c392c3c94949d6d51c0">MainWindow::swap_addon_list</a></div><div class="ttdeci">void swap_addon_list(const QString &amp;version)</div><div class="ttdef"><b>Definition:</b> <a href="mainwindow_8cpp_source.html#l00065">mainwindow.cpp:65</a></div></div>
+<div class="ttc" id="aresponse_8h_html"><div class="ttname"><a href="response_8h.html">response.h</a></div></div>
+<div class="ttc" id="aclass_ui___main_window_html_a00428b3ffe02bc8a2e1b40a2ea7706ca"><div class="ttname"><a href="class_ui___main_window.html#a00428b3ffe02bc8a2e1b40a2ea7706ca">Ui_MainWindow::wow_version_combo_box</a></div><div class="ttdeci">QComboBox * wow_version_combo_box</div><div class="ttdef"><b>Definition:</b> <a href="ui__mainwindow_8h_source.html#l00047">ui_mainwindow.h:47</a></div></div>
+<div class="ttc" id="aclass_ui___main_window_html_a49da3d40aeebe8a1f13eadf5116c5e6f"><div class="ttname"><a href="class_ui___main_window.html#a49da3d40aeebe8a1f13eadf5116c5e6f">Ui_MainWindow::ptr_table</a></div><div class="ttdeci">QTableWidget * ptr_table</div><div class="ttdef"><b>Definition:</b> <a href="ui__mainwindow_8h_source.html#l00049">ui_mainwindow.h:49</a></div></div>
+<div class="ttc" id="autils_8h_html"><div class="ttname"><a href="utils_8h.html">utils.h</a></div></div>
+<div class="ttc" id="aclass_ui___main_window_html_a188c243f36a2dbc10e4e2a0ad94273b1"><div class="ttname"><a href="class_ui___main_window.html#a188c243f36a2dbc10e4e2a0ad94273b1">Ui_MainWindow::actionQuit</a></div><div class="ttdeci">QAction * actionQuit</div><div class="ttdef"><b>Definition:</b> <a href="ui__mainwindow_8h_source.html#l00040">ui_mainwindow.h:40</a></div></div>
+<div class="ttc" id="aclass_ui___main_window_html_a5b7c1accc4de00054483398523d438ef"><div class="ttname"><a href="class_ui___main_window.html#a5b7c1accc4de00054483398523d438ef">Ui_MainWindow::retail_table</a></div><div class="ttdeci">QTableWidget * retail_table</div><div class="ttdef"><b>Definition:</b> <a href="ui__mainwindow_8h_source.html#l00051">ui_mainwindow.h:51</a></div></div>
+<div class="ttc" id="aclass_ui___main_window_html_acf4a0872c4c77d8f43a2ec66ed849b58"><div class="ttname"><a href="class_ui___main_window.html#acf4a0872c4c77d8f43a2ec66ed849b58">Ui_MainWindow::setupUi</a></div><div class="ttdeci">void setupUi(QMainWindow *MainWindow)</div><div class="ttdef"><b>Definition:</b> <a href="ui__mainwindow_8h_source.html#l00070">ui_mainwindow.h:70</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a35466a70ed47252a0191168126a352a5"><div class="ttname"><a href="class_main_window.html#a35466a70ed47252a0191168126a352a5">MainWindow::ui</a></div><div class="ttdeci">Ui::MainWindow * ui</div><div class="ttdef"><b>Definition:</b> <a href="mainwindow_8h_source.html#l00022">mainwindow.h:22</a></div></div>
+<div class="ttc" id="aclass_ui___main_window_html_a3260b943854b841c986f47c4726ee7f9"><div class="ttname"><a href="class_ui___main_window.html#a3260b943854b841c986f47c4726ee7f9">Ui_MainWindow::tabWidget</a></div><div class="ttdeci">QTabWidget * tabWidget</div><div class="ttdef"><b>Definition:</b> <a href="ui__mainwindow_8h_source.html#l00044">ui_mainwindow.h:44</a></div></div>
+<div class="ttc" id="asettingsmanager_8h_html"><div class="ttname"><a href="settingsmanager_8h.html">settingsmanager.h</a></div></div>
+<div class="ttc" id="anamespace_ui_html"><div class="ttname"><a href="namespace_ui.html">Ui</a></div><div class="ttdef"><b>Definition:</b> <a href="mainwindow_8h_source.html#l00007">mainwindow.h:7</a></div></div>
+<div class="ttc" id="aclass_ui___main_window_html_a7a5b9a4633d64f502ce81da3202d828c"><div class="ttname"><a href="class_ui___main_window.html#a7a5b9a4633d64f502ce81da3202d828c">Ui_MainWindow::lineEdit</a></div><div class="ttdeci">QLineEdit * lineEdit</div><div class="ttdef"><b>Definition:</b> <a href="ui__mainwindow_8h_source.html#l00063">ui_mainwindow.h:63</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a1f7d2c56410fc1bfa135bb907d43313f"><div class="ttname"><a href="class_main_window.html#a1f7d2c56410fc1bfa135bb907d43313f">MainWindow::~MainWindow</a></div><div class="ttdeci">~MainWindow() override</div></div>
+<div class="ttc" id="aclass_settings_manager_html_aec871a95f9508388b71ad09f6d6316a0"><div class="ttname"><a href="class_settings_manager.html#aec871a95f9508388b71ad09f6d6316a0">SettingsManager::get_base_wow_path</a></div><div class="ttdeci">std::string get_base_wow_path() const</div><div class="ttdef"><b>Definition:</b> <a href="settingsmanager_8cpp_source.html#l00063">settingsmanager.cpp:63</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a0011af920eca57c1a5a71c8cb4ed77ba"><div class="ttname"><a href="class_main_window.html#a0011af920eca57c1a5a71c8cb4ed77ba">MainWindow::fill_in_settings</a></div><div class="ttdeci">void fill_in_settings(const SettingsManager &amp;settings)</div><div class="ttdef"><b>Definition:</b> <a href="mainwindow_8cpp_source.html#l00083">mainwindow.cpp:83</a></div></div>
+<div class="ttc" id="aclass_settings_manager_html"><div class="ttname"><a href="class_settings_manager.html">SettingsManager</a></div><div class="ttdef"><b>Definition:</b> <a href="settingsmanager_8h_source.html#l00014">settingsmanager.h:14</a></div></div>
+<div class="ttc" id="aclass_addon_html_a426cb6d87a80eff6047b3f3f9ba4cfb4"><div class="ttname"><a href="class_addon.html#a426cb6d87a80eff6047b3f3f9ba4cfb4">Addon::get_remote_addons</a></div><div class="ttdeci">static Response&lt; std::vector&lt; Addon &gt; &gt; get_remote_addons()</div><div class="ttdef"><b>Definition:</b> <a href="addon_8cpp_source.html#l00080">addon.cpp:80</a></div></div>
+<div class="ttc" id="aclass_main_window_html"><div class="ttname"><a href="class_main_window.html">MainWindow</a></div><div class="ttdef"><b>Definition:</b> <a href="mainwindow_8h_source.html#l00011">mainwindow.h:11</a></div></div>
+<div class="ttc" id="aaddon_8h_html"><div class="ttname"><a href="addon_8h.html">addon.h</a></div></div>
+<div class="ttc" id="amainwindow_8h_html"><div class="ttname"><a href="mainwindow_8h.html">mainwindow.h</a></div></div>
+<div class="ttc" id="aclass_ui___main_window_html_a12b11920d51f4b69945b212a92b37e6b"><div class="ttname"><a href="class_ui___main_window.html#a12b11920d51f4b69945b212a92b37e6b">Ui_MainWindow::set_wow_path_btn</a></div><div class="ttdeci">QPushButton * set_wow_path_btn</div><div class="ttdef"><b>Definition:</b> <a href="ui__mainwindow_8h_source.html#l00064">ui_mainwindow.h:64</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d60f0656afeec9d139ae74cbf60ecc9d.html">wam-client</a></li><li class="navelem"><a class="el" href="dir_89b39024e5cf270042eb8fca246de1c4.html">src</a></li><li class="navelem"><a class="el" href="mainwindow_8cpp.html">mainwindow.cpp</a></li>
+    <li class="navelem"><a class="el" href="dir_d35a4bf3b0c64e0c9e71eb15263396dc.html">wam</a></li><li class="navelem"><a class="el" href="dir_95b079d02a52fe63b4be8c286fff3b5d.html">src</a></li><li class="navelem"><a class="el" href="mainwindow_8cpp.html">mainwindow.cpp</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>

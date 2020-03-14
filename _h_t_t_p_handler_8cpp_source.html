@@ -87,7 +87,7 @@ $(document).ready(function(){initNavTree('_h_t_t_p_handler_8cpp_source.html','')
 <div class="title">HTTPHandler.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_h_t_t_p_handler_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;HTTPHandler.h&quot;</span></div>
+<a href="_h_t_t_p_handler_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_h_t_t_p_handler_8h.html">HTTPHandler.h</a>&quot;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;curlpp/cURLpp.hpp&gt;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;curlpp/Easy.hpp&gt;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;curlpp/Options.hpp&gt;</span></div>
@@ -96,10 +96,10 @@ $(document).ready(function(){initNavTree('_h_t_t_p_handler_8cpp_source.html','')
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;json/json.h&gt;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;std::string HTTPHandler::WAM_API_URL{<span class="stringliteral">&quot;127.0.0.1:3000/api&quot;</span>};</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;std::string <a class="code" href="class_h_t_t_p_handler.html#afffc4dcd8d6673f19c054e39658f12e9">HTTPHandler::WAM_API_URL</a>{<span class="stringliteral">&quot;127.0.0.1:3000/api&quot;</span>};</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;Json::Value HTTPHandler::get(<span class="keyword">const</span> std::string &amp;route, <span class="keyword">const</span> <span class="keywordtype">bool</span> &amp;withHeader) {</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_h_t_t_p_handler.html#a905f67590d4e154ca66d8fd63aa40901">   17</a></span>&#160;Json::Value <a class="code" href="class_h_t_t_p_handler.html#a905f67590d4e154ca66d8fd63aa40901">HTTPHandler::get</a>(<span class="keyword">const</span> std::string &amp;route, <span class="keyword">const</span> <span class="keywordtype">bool</span> &amp;withHeader) {</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordflow">try</span> {</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        cURLpp::Easy request;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        cURLpp::Cleanup cleanup;</div>
@@ -123,7 +123,7 @@ $(document).ready(function(){initNavTree('_h_t_t_p_handler_8cpp_source.html','')
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;Json::Value HTTPHandler::post(<span class="keyword">const</span> std::string &amp;route, <span class="keyword">const</span> std::string &amp;messageBody, <span class="keyword">const</span> <span class="keywordtype">bool</span> &amp;withHeader) {</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="class_h_t_t_p_handler.html#ac938a027a492a41af6354b3038b0673a">   46</a></span>&#160;Json::Value <a class="code" href="class_h_t_t_p_handler.html#ac938a027a492a41af6354b3038b0673a">HTTPHandler::post</a>(<span class="keyword">const</span> std::string &amp;route, <span class="keyword">const</span> std::string &amp;messageBody, <span class="keyword">const</span> <span class="keywordtype">bool</span> &amp;withHeader) {</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">try</span> {</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        cURLpp::Easy request;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        cURLpp::Cleanup cleanup;</div>
@@ -150,7 +150,7 @@ $(document).ready(function(){initNavTree('_h_t_t_p_handler_8cpp_source.html','')
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;Json::Value HTTPHandler::put(<span class="keyword">const</span> std::string &amp;route, <span class="keyword">const</span> std::string &amp;messageBody, <span class="keyword">const</span> <span class="keywordtype">bool</span> &amp;withHeader) {</div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="class_h_t_t_p_handler.html#a2bd52131cc94e7b4cfbdcae99947be07">   78</a></span>&#160;Json::Value <a class="code" href="class_h_t_t_p_handler.html#a2bd52131cc94e7b4cfbdcae99947be07">HTTPHandler::put</a>(<span class="keyword">const</span> std::string &amp;route, <span class="keyword">const</span> std::string &amp;messageBody, <span class="keyword">const</span> <span class="keywordtype">bool</span> &amp;withHeader) {</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">try</span> {</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        cURLpp::Easy request;</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        cURLpp::Cleanup cleanup;</div>
@@ -177,7 +177,7 @@ $(document).ready(function(){initNavTree('_h_t_t_p_handler_8cpp_source.html','')
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    }</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;}</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;Json::Value HTTPHandler::del(<span class="keyword">const</span> std::string &amp;route, <span class="keyword">const</span> <span class="keywordtype">bool</span> &amp;withHeader) {</div>
+<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="class_h_t_t_p_handler.html#a471fe37b09e0b0d2055661834137b94d">  105</a></span>&#160;Json::Value <a class="code" href="class_h_t_t_p_handler.html#a471fe37b09e0b0d2055661834137b94d">HTTPHandler::del</a>(<span class="keyword">const</span> std::string &amp;route, <span class="keyword">const</span> <span class="keywordtype">bool</span> &amp;withHeader) {</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordflow">try</span>{</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        cURLpp::Easy request;</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        cURLpp::Cleanup cleanup;</div>
@@ -203,6 +203,12 @@ $(document).ready(function(){initNavTree('_h_t_t_p_handler_8cpp_source.html','')
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="aclass_h_t_t_p_handler_html_a471fe37b09e0b0d2055661834137b94d"><div class="ttname"><a href="class_h_t_t_p_handler.html#a471fe37b09e0b0d2055661834137b94d">HTTPHandler::del</a></div><div class="ttdeci">static Json::Value del(const std::string &amp;route, const bool &amp;withHeader=false)</div><div class="ttdef"><b>Definition:</b> <a href="_h_t_t_p_handler_8cpp_source.html#l00105">HTTPHandler.cpp:105</a></div></div>
+<div class="ttc" id="aclass_h_t_t_p_handler_html_a2bd52131cc94e7b4cfbdcae99947be07"><div class="ttname"><a href="class_h_t_t_p_handler.html#a2bd52131cc94e7b4cfbdcae99947be07">HTTPHandler::put</a></div><div class="ttdeci">static Json::Value put(const std::string &amp;route, const std::string &amp;messageBody, const bool &amp;withHeader=false)</div><div class="ttdoc">Performs an http put request.</div><div class="ttdef"><b>Definition:</b> <a href="_h_t_t_p_handler_8cpp_source.html#l00078">HTTPHandler.cpp:78</a></div></div>
+<div class="ttc" id="aclass_h_t_t_p_handler_html_ac938a027a492a41af6354b3038b0673a"><div class="ttname"><a href="class_h_t_t_p_handler.html#ac938a027a492a41af6354b3038b0673a">HTTPHandler::post</a></div><div class="ttdeci">static Json::Value post(const std::string &amp;route, const std::string &amp;messageBody, const bool &amp;withHeader=false)</div><div class="ttdoc">Performs an http post request.</div><div class="ttdef"><b>Definition:</b> <a href="_h_t_t_p_handler_8cpp_source.html#l00046">HTTPHandler.cpp:46</a></div></div>
+<div class="ttc" id="a_h_t_t_p_handler_8h_html"><div class="ttname"><a href="_h_t_t_p_handler_8h.html">HTTPHandler.h</a></div></div>
+<div class="ttc" id="aclass_h_t_t_p_handler_html_afffc4dcd8d6673f19c054e39658f12e9"><div class="ttname"><a href="class_h_t_t_p_handler.html#afffc4dcd8d6673f19c054e39658f12e9">HTTPHandler::WAM_API_URL</a></div><div class="ttdeci">static std::string WAM_API_URL</div><div class="ttdef"><b>Definition:</b> <a href="_h_t_t_p_handler_8h_source.html#l00013">HTTPHandler.h:13</a></div></div>
+<div class="ttc" id="aclass_h_t_t_p_handler_html_a905f67590d4e154ca66d8fd63aa40901"><div class="ttname"><a href="class_h_t_t_p_handler.html#a905f67590d4e154ca66d8fd63aa40901">HTTPHandler::get</a></div><div class="ttdeci">static Json::Value get(const std::string &amp;route, const bool &amp;withHeader=false)</div><div class="ttdoc">Performs an http get request.</div><div class="ttdef"><b>Definition:</b> <a href="_h_t_t_p_handler_8cpp_source.html#l00017">HTTPHandler.cpp:17</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

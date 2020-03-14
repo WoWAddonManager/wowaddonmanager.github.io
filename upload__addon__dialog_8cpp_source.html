@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>WoW Addon Manager Client: /home/jordan/Nextcloud/projects/wam-client/src/upload_addon_dialog.cpp Source File</title>
+<title>WoW Addon Manager Client: /home/jordan/Nextcloud/projects/wam/src/upload_addon_dialog.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -87,30 +87,39 @@ $(document).ready(function(){initNavTree('upload__addon__dialog_8cpp_source.html
 <div class="title">upload_addon_dialog.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="upload__addon__dialog_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;upload_addon_dialog.h&quot;</span></div>
+<a href="upload__addon__dialog_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="upload__addon__dialog_8h.html">upload_addon_dialog.h</a>&quot;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;QFileDialog&gt;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;upload_addon_dialog::upload_addon_dialog(QWidget *parent): QDialog(parent), dialog(new Ui::upload_addon_dialog){</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    dialog-&gt;setupUi(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    dialog-&gt;wow_version-&gt;addItem(<span class="stringliteral">&quot;Retail&quot;</span>);</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    dialog-&gt;wow_version-&gt;addItem(<span class="stringliteral">&quot;Classic&quot;</span>);</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    dialog-&gt;wow_version-&gt;addItem(<span class="stringliteral">&quot;PTR&quot;</span>);</div>
+<div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="classupload__addon__dialog.html#a5b801a32b69fd1c4d0797580d56702a5">    4</a></span>&#160;<a class="code" href="classupload__addon__dialog.html#a5b801a32b69fd1c4d0797580d56702a5">upload_addon_dialog::upload_addon_dialog</a>(QWidget *parent): QDialog(parent), dialog(new <a class="code" href="namespace_ui.html">Ui</a>::<a class="code" href="classupload__addon__dialog.html">upload_addon_dialog</a>){</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    <a class="code" href="classupload__addon__dialog.html#a72d32e80def1b72ad701c4d4de820800">dialog</a>-&gt;<a class="code" href="class_ui__upload__addon__dialog.html#a04e6afd6442ae6c4dd8f7f6a43bb7cf3">setupUi</a>(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <a class="code" href="classupload__addon__dialog.html#a72d32e80def1b72ad701c4d4de820800">dialog</a>-&gt;<a class="code" href="class_ui__upload__addon__dialog.html#ad7bc5c846d0da80253d80fb9a27e2805">wow_version</a>-&gt;addItem(<span class="stringliteral">&quot;Retail&quot;</span>);</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <a class="code" href="classupload__addon__dialog.html#a72d32e80def1b72ad701c4d4de820800">dialog</a>-&gt;<a class="code" href="class_ui__upload__addon__dialog.html#ad7bc5c846d0da80253d80fb9a27e2805">wow_version</a>-&gt;addItem(<span class="stringliteral">&quot;Classic&quot;</span>);</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <a class="code" href="classupload__addon__dialog.html#a72d32e80def1b72ad701c4d4de820800">dialog</a>-&gt;<a class="code" href="class_ui__upload__addon__dialog.html#ad7bc5c846d0da80253d80fb9a27e2805">wow_version</a>-&gt;addItem(<span class="stringliteral">&quot;PTR&quot;</span>);</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    connect(dialog-&gt;browse_addon_folder_button, &amp;QPushButton::clicked, [&amp;]() {</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    connect(<a class="code" href="classupload__addon__dialog.html#a72d32e80def1b72ad701c4d4de820800">dialog</a>-&gt;<a class="code" href="class_ui__upload__addon__dialog.html#aac72915aeacbd68f20192c198a0944c1">browse_addon_folder_button</a>, &amp;QPushButton::clicked, [&amp;]() {</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        auto folder_path = QFileDialog::getExistingDirectory();</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        std::cout &lt;&lt; folder_path.toStdString() &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    });</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;}</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;upload_addon_dialog::~upload_addon_dialog() {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">delete</span>(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        dialog-&gt;addon_path-&gt;setText(folder_path);</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        std::cout &lt;&lt; folder_path.toStdString() &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    });</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<a class="code" href="classupload__addon__dialog.html#aff3a43333049909443b50a00996c9b63">upload_addon_dialog::~upload_addon_dialog</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="aclassupload__addon__dialog_html"><div class="ttname"><a href="classupload__addon__dialog.html">upload_addon_dialog</a></div><div class="ttdef"><b>Definition:</b> <a href="upload__addon__dialog_8h_source.html#l00009">upload_addon_dialog.h:9</a></div></div>
+<div class="ttc" id="aupload__addon__dialog_8h_html"><div class="ttname"><a href="upload__addon__dialog_8h.html">upload_addon_dialog.h</a></div></div>
+<div class="ttc" id="aclass_ui__upload__addon__dialog_html_a04e6afd6442ae6c4dd8f7f6a43bb7cf3"><div class="ttname"><a href="class_ui__upload__addon__dialog.html#a04e6afd6442ae6c4dd8f7f6a43bb7cf3">Ui_upload_addon_dialog::setupUi</a></div><div class="ttdeci">void setupUi(QDialog *upload_addon_dialog)</div><div class="ttdef"><b>Definition:</b> <a href="ui__upload__addon__dialog_8h_source.html#l00048">ui_upload_addon_dialog.h:48</a></div></div>
+<div class="ttc" id="aclass_ui__upload__addon__dialog_html_aac72915aeacbd68f20192c198a0944c1"><div class="ttname"><a href="class_ui__upload__addon__dialog.html#aac72915aeacbd68f20192c198a0944c1">Ui_upload_addon_dialog::browse_addon_folder_button</a></div><div class="ttdeci">QPushButton * browse_addon_folder_button</div><div class="ttdef"><b>Definition:</b> <a href="ui__upload__addon__dialog_8h_source.html#l00039">ui_upload_addon_dialog.h:39</a></div></div>
+<div class="ttc" id="anamespace_ui_html"><div class="ttname"><a href="namespace_ui.html">Ui</a></div><div class="ttdef"><b>Definition:</b> <a href="mainwindow_8h_source.html#l00007">mainwindow.h:7</a></div></div>
+<div class="ttc" id="aclassupload__addon__dialog_html_a5b801a32b69fd1c4d0797580d56702a5"><div class="ttname"><a href="classupload__addon__dialog.html#a5b801a32b69fd1c4d0797580d56702a5">upload_addon_dialog::upload_addon_dialog</a></div><div class="ttdeci">upload_addon_dialog(QWidget *parent=nullptr)</div><div class="ttdef"><b>Definition:</b> <a href="upload__addon__dialog_8cpp_source.html#l00004">upload_addon_dialog.cpp:4</a></div></div>
+<div class="ttc" id="aclass_ui__upload__addon__dialog_html_ad7bc5c846d0da80253d80fb9a27e2805"><div class="ttname"><a href="class_ui__upload__addon__dialog.html#ad7bc5c846d0da80253d80fb9a27e2805">Ui_upload_addon_dialog::wow_version</a></div><div class="ttdeci">QComboBox * wow_version</div><div class="ttdef"><b>Definition:</b> <a href="ui__upload__addon__dialog_8h_source.html#l00037">ui_upload_addon_dialog.h:37</a></div></div>
+<div class="ttc" id="aclassupload__addon__dialog_html_aff3a43333049909443b50a00996c9b63"><div class="ttname"><a href="classupload__addon__dialog.html#aff3a43333049909443b50a00996c9b63">upload_addon_dialog::~upload_addon_dialog</a></div><div class="ttdeci">~upload_addon_dialog() override</div></div>
+<div class="ttc" id="aclassupload__addon__dialog_html_a72d32e80def1b72ad701c4d4de820800"><div class="ttname"><a href="classupload__addon__dialog.html#a72d32e80def1b72ad701c4d4de820800">upload_addon_dialog::dialog</a></div><div class="ttdeci">Ui::upload_addon_dialog * dialog</div><div class="ttdef"><b>Definition:</b> <a href="upload__addon__dialog_8h_source.html#l00017">upload_addon_dialog.h:17</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d60f0656afeec9d139ae74cbf60ecc9d.html">wam-client</a></li><li class="navelem"><a class="el" href="dir_89b39024e5cf270042eb8fca246de1c4.html">src</a></li><li class="navelem"><a class="el" href="upload__addon__dialog_8cpp.html">upload_addon_dialog.cpp</a></li>
+    <li class="navelem"><a class="el" href="dir_d35a4bf3b0c64e0c9e71eb15263396dc.html">wam</a></li><li class="navelem"><a class="el" href="dir_95b079d02a52fe63b4be8c286fff3b5d.html">src</a></li><li class="navelem"><a class="el" href="upload__addon__dialog_8cpp.html">upload_addon_dialog.cpp</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>

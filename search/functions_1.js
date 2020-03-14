@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['operator_3c_3c_17',['operator&lt;&lt;',['../addon_8cpp.html#a2b7c5a160e10a6c60b2c02b802c99f63',1,'addon.cpp']]]
+  ['create_5faddon_135',['create_addon',['../class_addon.html#aa695df84b35f206c002665e483eb6675',1,'Addon']]]
 ];
