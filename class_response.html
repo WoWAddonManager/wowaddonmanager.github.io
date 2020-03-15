@@ -100,8 +100,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aae60899ef796065535d6bbbc620757a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1cc45f2469dd4c5b4def6d1eda2fd0a8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_response.html#a1cc45f2469dd4c5b4def6d1eda2fd0a8">Response</a> ()=delete</td></tr>
 <tr class="separator:a1cc45f2469dd4c5b4def6d1eda2fd0a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af742296fd666ad5ad6a7c7a1adf88568"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_response.html#af742296fd666ad5ad6a7c7a1adf88568">Response</a> (const std::string &amp;p_message, const int &amp;p_error_code, T *p_data)</td></tr>
-<tr class="separator:af742296fd666ad5ad6a7c7a1adf88568"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53f1f33ebb663b0f09dfbdbfdc34dc0f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_response.html#a53f1f33ebb663b0f09dfbdbfdc34dc0f">Response</a> (const std::string &amp;p_message, const int &amp;p_error_code, const T &amp;p_data)</td></tr>
+<tr class="separator:a53f1f33ebb663b0f09dfbdbfdc34dc0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acc6b287e4e4bb7c44f8f7ecebc1cb748"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_response.html#acc6b287e4e4bb7c44f8f7ecebc1cb748">get_data</a> ()</td></tr>
 <tr class="separator:acc6b287e4e4bb7c44f8f7ecebc1cb748"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad059df77df66e781c0c92247ce7b6ae0"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_response.html#ad059df77df66e781c0c92247ce7b6ae0">get_message</a> ()</td></tr>
@@ -115,8 +115,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:ad0bd1d202f64d3750959fe1c82f96afa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab90f2cfddc59d6497fd87f771d491ba5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_response.html#ab90f2cfddc59d6497fd87f771d491ba5">m_error_code</a> = 0</td></tr>
 <tr class="separator:ab90f2cfddc59d6497fd87f771d491ba5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa26a4e86ef934f1dd12e76cc8839b2c3"><td class="memItemLeft" align="right" valign="top">T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_response.html#aa26a4e86ef934f1dd12e76cc8839b2c3">m_data</a></td></tr>
-<tr class="separator:aa26a4e86ef934f1dd12e76cc8839b2c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8da2eddc3d67533fb5b2fb7a54c46ab"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_response.html#ac8da2eddc3d67533fb5b2fb7a54c46ab">m_data</a></td></tr>
+<tr class="separator:ac8da2eddc3d67533fb5b2fb7a54c46ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;class T&gt;<br />
@@ -179,8 +179,8 @@ template&lt;class T &gt; </div>
 
 </div>
 </div>
-<a id="af742296fd666ad5ad6a7c7a1adf88568"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af742296fd666ad5ad6a7c7a1adf88568">&#9670;&nbsp;</a></span>Response() <span class="overload">[2/2]</span></h2>
+<a id="a53f1f33ebb663b0f09dfbdbfdc34dc0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53f1f33ebb663b0f09dfbdbfdc34dc0f">&#9670;&nbsp;</a></span>Response() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -205,7 +205,7 @@ template&lt;class T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">T *&#160;</td>
+          <td class="paramtype">const T &amp;&#160;</td>
           <td class="paramname"><em>p_data</em>&#160;</td>
         </tr>
         <tr>
@@ -314,8 +314,8 @@ template&lt;class T &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="aa26a4e86ef934f1dd12e76cc8839b2c3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa26a4e86ef934f1dd12e76cc8839b2c3">&#9670;&nbsp;</a></span>m_data</h2>
+<a id="ac8da2eddc3d67533fb5b2fb7a54c46ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8da2eddc3d67533fb5b2fb7a54c46ab">&#9670;&nbsp;</a></span>m_data</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -326,7 +326,7 @@ template&lt;class T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">T* <a class="el" href="class_response.html">Response</a>&lt; T &gt;::m_data</td>
+          <td class="memname">T <a class="el" href="class_response.html">Response</a>&lt; T &gt;::m_data</td>
         </tr>
       </table>
   </td>

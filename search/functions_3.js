@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['get_5faddon_5fby_5fname_137',['get_addon_by_name',['../class_addon.html#a4ce913cc11bf777fdf53a04a2a4345d1',1,'Addon']]],
+  ['get_5faddon_5fby_5fname_137',['get_addon_by_name',['../class_addon.html#ac4632ee376f1cc46beb352fda2b8ab98',1,'Addon']]],
   ['get_5fbase_5fwow_5fpath_138',['get_base_wow_path',['../class_settings_manager.html#aec871a95f9508388b71ad09f6d6316a0',1,'SettingsManager']]],
   ['get_5fdata_139',['get_data',['../class_response.html#acc6b287e4e4bb7c44f8f7ecebc1cb748',1,'Response']]],
   ['get_5ferror_5fcode_140',['get_error_code',['../class_response.html#a2db776c93214528b36abf2c2399b2b5e',1,'Response']]],

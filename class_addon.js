@@ -9,7 +9,7 @@ var class_addon =
     [ "Addon", "class_addon.html#aadf349e18e282b1e34b5c2b2cc5608aa", null ],
     [ "Addon", "class_addon.html#a3cc79bc9af04de133020baf3b553a9ea", null ],
     [ "create_addon", "class_addon.html#aa695df84b35f206c002665e483eb6675", null ],
-    [ "get_addon_by_name", "class_addon.html#a4ce913cc11bf777fdf53a04a2a4345d1", null ],
+    [ "get_addon_by_name", "class_addon.html#ac4632ee376f1cc46beb352fda2b8ab98", null ],
     [ "get_installed_adddons", "class_addon.html#ac2a13f73340e601365be03deab92b599", null ],
     [ "get_path", "class_addon.html#a3b5d8c55269c556174c29db7a3250212", null ],
     [ "get_remote_addons", "class_addon.html#a426cb6d87a80eff6047b3f3f9ba4cfb4", null ],
