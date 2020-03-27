@@ -5,5 +5,6 @@ var dir_95b079d02a52fe63b4be8c286fff3b5d =
     [ "mainwindow.cpp", "mainwindow_8cpp.html", null ],
     [ "settingsmanager.cpp", "settingsmanager_8cpp.html", null ],
     [ "upload_addon_dialog.cpp", "upload__addon__dialog_8cpp.html", null ],
-    [ "utils.cpp", "utils_8cpp.html", null ]
+    [ "user.cpp", "user_8cpp.html", null ],
+    [ "utils.cpp", "utils_8cpp.html", "utils_8cpp" ]
 ];

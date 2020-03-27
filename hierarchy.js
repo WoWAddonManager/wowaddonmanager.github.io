@@ -14,5 +14,6 @@ var hierarchy =
     ] ],
     [ "Ui_upload_addon_dialog", "class_ui__upload__addon__dialog.html", [
       [ "Ui::upload_addon_dialog", "class_ui_1_1upload__addon__dialog.html", null ]
-    ] ]
+    ] ],
+    [ "User", "class_user.html", null ]
 ];

@@ -84,7 +84,6 @@ $(document).ready(function(){initNavTree('utils_8h.html',''); initResizable(); }
 
 <div class="header">
   <div class="summary">
-<a href="#namespaces">Namespaces</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">utils.h File Reference</div>  </div>
@@ -92,21 +91,99 @@ $(document).ready(function(){initNavTree('utils_8h.html',''); initResizable(); }
 <div class="contents">
 <div class="textblock"><code>#include &lt;string&gt;</code><br />
 <code>#include &lt;json/json.h&gt;</code><br />
+<code>#include &quot;httplib.h&quot;</code><br />
 </div>
 <p><a href="utils_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:namespaceutils"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils.html">utils</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ae23aa6b0a282cd1d24b948d98819b807"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils.html#ae23aa6b0a282cd1d24b948d98819b807">utils::read_file_to_string</a> (const std::string &amp;path)</td></tr>
-<tr class="separator:ae23aa6b0a282cd1d24b948d98819b807"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeef47c9ad14b3bca5b107053784e4df4"><td class="memItemLeft" align="right" valign="top">Json::Value&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils.html#aeef47c9ad14b3bca5b107053784e4df4">utils::string_to_json</a> (const std::basic_string&lt; char &gt; &amp;string)</td></tr>
-<tr class="separator:aeef47c9ad14b3bca5b107053784e4df4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a19f3b0f1efd3f11890720150d893e0"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8h.html#a8a19f3b0f1efd3f11890720150d893e0">read_file_to_string</a> (const std::string &amp;path)</td></tr>
+<tr class="separator:a8a19f3b0f1efd3f11890720150d893e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af050bea4830a81a2575f6db1cf986d82"><td class="memItemLeft" align="right" valign="top">Json::Value&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8h.html#af050bea4830a81a2575f6db1cf986d82">string_to_json</a> (const std::basic_string&lt; char &gt; &amp;string)</td></tr>
+<tr class="separator:af050bea4830a81a2575f6db1cf986d82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac77d8c847265567d68057fd233840a2b"><td class="memItemLeft" align="right" valign="top">httplib::Client&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8h.html#ac77d8c847265567d68057fd233840a2b">make_client</a> ()</td></tr>
+<tr class="separator:ac77d8c847265567d68057fd233840a2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab64f10c52eb78946431a372d2e3a9983"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8h.html#ab64f10c52eb78946431a372d2e3a9983">make_message_box</a> (const std::string &amp;message)</td></tr>
+<tr class="separator:ab64f10c52eb78946431a372d2e3a9983"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ac77d8c847265567d68057fd233840a2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac77d8c847265567d68057fd233840a2b">&#9670;&nbsp;</a></span>make_client()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">httplib::Client make_client </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="utils_8cpp_source.html#l00031">31</a> of file <a class="el" href="utils_8cpp_source.html">utils.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ab64f10c52eb78946431a372d2e3a9983"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab64f10c52eb78946431a372d2e3a9983">&#9670;&nbsp;</a></span>make_message_box()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void make_message_box </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>message</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="utils_8cpp_source.html#l00035">35</a> of file <a class="el" href="utils_8cpp_source.html">utils.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a8a19f3b0f1efd3f11890720150d893e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a19f3b0f1efd3f11890720150d893e0">&#9670;&nbsp;</a></span>read_file_to_string()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string read_file_to_string </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="utils_8cpp_source.html#l00007">7</a> of file <a class="el" href="utils_8cpp_source.html">utils.cpp</a>.</p>
+
+</div>
+</div>
+<a id="af050bea4830a81a2575f6db1cf986d82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af050bea4830a81a2575f6db1cf986d82">&#9670;&nbsp;</a></span>string_to_json()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Json::Value string_to_json </td>
+          <td>(</td>
+          <td class="paramtype">const std::basic_string&lt; char &gt; &amp;&#160;</td>
+          <td class="paramname"><em>string</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

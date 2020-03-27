@@ -15,5 +15,6 @@ var class_ui__upload__addon__dialog =
     [ "label_5", "class_ui__upload__addon__dialog.html#a240c2a6edaf52969e73f32eabaf06590", null ],
     [ "label_6", "class_ui__upload__addon__dialog.html#a84f617f253b52a830b94596b608b6e11", null ],
     [ "lineEdit", "class_ui__upload__addon__dialog.html#a2bc92a90643d757d6f58394c7a60fa79", null ],
+    [ "upload_addon", "class_ui__upload__addon__dialog.html#a301fc739ace10f93cd5f0acb2f11b50b", null ],
     [ "wow_version", "class_ui__upload__addon__dialog.html#ad7bc5c846d0da80253d80fb9a27e2805", null ]
 ];

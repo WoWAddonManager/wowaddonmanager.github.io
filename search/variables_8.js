@@ -1,10 +1,24 @@
 var searchData=
 [
-  ['label_188',['label',['../class_ui___main_window.html#ad9c89133780f28e6efa2ec17ceb9cff5',1,'Ui_MainWindow::label()'],['../class_ui__upload__addon__dialog.html#ab57d6c76278549975257bc6f2fc1f257',1,'Ui_upload_addon_dialog::label()']]],
-  ['label_5f2_189',['label_2',['../class_ui___main_window.html#a2e2516d755e4dd53fc905dabddf2738a',1,'Ui_MainWindow::label_2()'],['../class_ui__upload__addon__dialog.html#a0c6b3e29dd01ef5ddee1021c096e2e74',1,'Ui_upload_addon_dialog::label_2()']]],
-  ['label_5f3_190',['label_3',['../class_ui___main_window.html#a0376fd90247280e7c7957cc70628708c',1,'Ui_MainWindow::label_3()'],['../class_ui__upload__addon__dialog.html#a5a42b430e997ba387a1cae07406e4f45',1,'Ui_upload_addon_dialog::label_3()']]],
-  ['label_5f4_191',['label_4',['../class_ui__upload__addon__dialog.html#a9cd1fa27f0a2d368c162e79f268f4b0d',1,'Ui_upload_addon_dialog']]],
-  ['label_5f5_192',['label_5',['../class_ui__upload__addon__dialog.html#a240c2a6edaf52969e73f32eabaf06590',1,'Ui_upload_addon_dialog']]],
-  ['label_5f6_193',['label_6',['../class_ui__upload__addon__dialog.html#a84f617f253b52a830b94596b608b6e11',1,'Ui_upload_addon_dialog']]],
-  ['lineedit_194',['lineEdit',['../class_ui___main_window.html#a7a5b9a4633d64f502ce81da3202d828c',1,'Ui_MainWindow::lineEdit()'],['../class_ui__upload__addon__dialog.html#a2bc92a90643d757d6f58394c7a60fa79',1,'Ui_upload_addon_dialog::lineEdit()']]]
+  ['m_5faccount_5fid_224',['m_account_id',['../class_user.html#a594c513df596ca84856b64f6e55c8611',1,'User']]],
+  ['m_5faddon_5fversion_225',['m_addon_version',['../class_addon.html#a9aa19263d84bde127595ab4c33c33062',1,'Addon']]],
+  ['m_5faddonname_226',['m_addonName',['../class_addon.html#ab0b89f2d19533a9455a12124cee42090',1,'Addon']]],
+  ['m_5fbase_5fwow_5ffolder_5fpath_227',['m_base_wow_folder_path',['../class_settings_manager.html#aaabe8f9acb929c03234b93f9ab3c2a52',1,'SettingsManager']]],
+  ['m_5fclassic_5faddons_5fpath_228',['m_classic_addons_path',['../class_settings_manager.html#af6f9a56fbd0587ffc4f341980a2f6d16',1,'SettingsManager']]],
+  ['m_5fdata_229',['m_data',['../class_response.html#a31a87219ad43d2c93a046a9ecec3051c',1,'Response']]],
+  ['m_5fdescription_230',['m_description',['../class_addon.html#a27012797cf6e4e65c918d1d64af1189e',1,'Addon']]],
+  ['m_5fdisplay_5fname_231',['m_display_name',['../class_user.html#ad4ed4aa4b313bbd5c8371120090026f9',1,'User']]],
+  ['m_5femail_232',['m_email',['../class_user.html#ad316649783ad9e0a755db046f13b2e5d',1,'User']]],
+  ['m_5ferror_5fcode_233',['m_error_code',['../class_response.html#ab90f2cfddc59d6497fd87f771d491ba5',1,'Response']]],
+  ['m_5fid_234',['m_id',['../class_addon.html#a6dda8a45d32a7a2e25e208b12fbb88d2',1,'Addon']]],
+  ['m_5finterface_5fversion_235',['m_interface_version',['../class_addon.html#af4be394d92912f7c9190757f793be37b',1,'Addon']]],
+  ['m_5fmessage_236',['m_message',['../class_response.html#ad0bd1d202f64d3750959fe1c82f96afa',1,'Response']]],
+  ['m_5fpath_237',['m_path',['../class_addon.html#ad581a9a06a91b8afbd1e82a886d16ef6',1,'Addon']]],
+  ['m_5fptr_5faddons_5fpath_238',['m_ptr_addons_path',['../class_settings_manager.html#a3a9528347bdebe561d83946499438b68',1,'SettingsManager']]],
+  ['m_5fretail_5faddons_5fpath_239',['m_retail_addons_path',['../class_settings_manager.html#abe87c4b79346667f123fcbaf35dd9cac',1,'SettingsManager']]],
+  ['m_5ftoken_240',['m_token',['../class_user.html#ad0c3bd2a6719c75c61ff83710a8535da',1,'User']]],
+  ['m_5ftorrent_5finfo_241',['m_torrent_info',['../class_addon.html#a50add4d2009ef859fea43b429686665a',1,'Addon']]],
+  ['m_5fwow_5fversion_242',['m_wow_version',['../class_addon.html#a9419b4ed4786a299e4d67bea963162e0',1,'Addon']]],
+  ['menubar_243',['menuBar',['../class_ui___main_window.html#a2be1c24ec9adfca18e1dcc951931457f',1,'Ui_MainWindow']]],
+  ['menufile_244',['menuFile',['../class_ui___main_window.html#a7ba84cb4cdd6a12dc83bf4e100bd8d80',1,'Ui_MainWindow']]]
 ];

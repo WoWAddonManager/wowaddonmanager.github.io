@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['main_146',['main',['../main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main.cpp']]],
-  ['mainwindow_147',['MainWindow',['../class_main_window.html#a74e8d57ce6ecbcaa23c81d2fc5f2a6cc',1,'MainWindow']]],
-  ['make_5fwam_148',['make_wam',['../class_addon.html#a8120e23d1304b84f4860ba78248ea68d',1,'Addon']]]
+  ['login_169',['login',['../class_user.html#a6c1ee1b34ec567648667478b5725c92f',1,'User::login(const std::string &amp;username, const std::string &amp;password)'],['../class_user.html#a9dd5efec02da9f12f4ac694c9fd86fd1',1,'User::login(const std::string &amp;token)']]]
 ];

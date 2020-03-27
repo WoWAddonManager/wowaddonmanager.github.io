@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ui_218',['ui',['../class_main_window.html#a35466a70ed47252a0191168126a352a5',1,'MainWindow']]]
+  ['verticalspacer_254',['verticalSpacer',['../class_ui___main_window.html#a8384329c3663ff274e926a12024aab52',1,'Ui_MainWindow']]]
 ];

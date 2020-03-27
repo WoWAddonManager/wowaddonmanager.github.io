@@ -96,135 +96,206 @@ $(document).ready(function(){initNavTree('addon_8cpp_source.html',''); initResiz
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;boost/range/iterator_range_core.hpp&gt;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;boost/archive/binary_oarchive.hpp&gt;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;libtorrent/file_storage.hpp&gt;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="addon_8h.html">addon.h</a>&quot;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="utils_8h.html">utils.h</a>&quot;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;httplib.h&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;libtorrent/settings_pack.hpp&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;libtorrent/session.hpp&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;libtorrent/create_torrent.hpp&gt;</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_addon.html#aa695df84b35f206c002665e483eb6675">   16</a></span>&#160;<a class="code" href="class_addon.html">Addon</a> <a class="code" href="class_addon.html#aa695df84b35f206c002665e483eb6675">Addon::create_addon</a>(<span class="keyword">const</span> std::string &amp;p_addon_folder_path) {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_addon.html">Addon</a>{};</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="addon_8h.html">addon.h</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="utils_8h.html">utils.h</a>&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;httplib.h&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="class_addon.html#aadf349e18e282b1e34b5c2b2cc5608aa">   20</a></span>&#160;<a class="code" href="class_addon.html#a400f8522ea8b3e4077ef38b86e4830b8">Addon::Addon</a>(<span class="keyword">const</span> int64_t &amp;p_id, <span class="keyword">const</span> std::string &amp;p_addon_name, <span class="keyword">const</span> std::string &amp;p_addon_version,</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;             <span class="keyword">const</span> std::string &amp;p_interface_version, <span class="keyword">const</span> std::string &amp;p_addon_note,</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;             <span class="keyword">const</span> <a class="code" href="class_addon.html#ae0cf84199558dea5057b67c36104a22b">WoWVersion</a> &amp;p_wow_version) {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    this-&gt;<a class="code" href="class_addon.html#ab0b89f2d19533a9455a12124cee42090">m_addonName</a> = p_addon_name;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    this-&gt;<a class="code" href="class_addon.html#af4be394d92912f7c9190757f793be37b">m_interface_version</a> = p_interface_version;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    this-&gt;<a class="code" href="class_addon.html#a27012797cf6e4e65c918d1d64af1189e">m_description</a> = p_addon_note;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    this-&gt;<a class="code" href="class_addon.html#a9aa19263d84bde127595ab4c33c33062">m_addon_version</a> = p_addon_version;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    this-&gt;<a class="code" href="class_addon.html#a9419b4ed4786a299e4d67bea963162e0">m_wow_version</a> = p_wow_version;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="class_addon.html#a3cc79bc9af04de133020baf3b553a9ea">   31</a></span>&#160;<a class="code" href="class_addon.html#a400f8522ea8b3e4077ef38b86e4830b8">Addon::Addon</a>(<span class="keyword">const</span> Json::Value &amp;p_addon_json) {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    this-&gt;<a class="code" href="class_addon.html#ab0b89f2d19533a9455a12124cee42090">m_addonName</a> = p_addon_json[<span class="stringliteral">&quot;name&quot;</span>].asString();</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    this-&gt;<a class="code" href="class_addon.html#a27012797cf6e4e65c918d1d64af1189e">m_description</a> = p_addon_json[<span class="stringliteral">&quot;description&quot;</span>].asString();</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    this-&gt;<a class="code" href="class_addon.html#a9aa19263d84bde127595ab4c33c33062">m_addon_version</a> = p_addon_json[<span class="stringliteral">&quot;version&quot;</span>].asString();</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    this-&gt;<a class="code" href="class_addon.html#a9419b4ed4786a299e4d67bea963162e0">m_wow_version</a> = WoWVersion::Retail;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="class_addon.html#ac2a13f73340e601365be03deab92b599">   38</a></span>&#160;std::vector&lt;Addon&gt; <a class="code" href="class_addon.html#ac2a13f73340e601365be03deab92b599">Addon::get_installed_adddons</a>(<span class="keyword">const</span> <a class="code" href="class_addon.html#ae0cf84199558dea5057b67c36104a22b">WoWVersion</a> &amp;p_wow_version) {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    boost::filesystem::directory_iterator dir_iter;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">switch</span> (p_wow_version) {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">case</span> WoWVersion::Retail:</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            dir_iter = boost::filesystem::directory_iterator(<span class="stringliteral">&quot;./wam_files/retail&quot;</span>);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">case</span> WoWVersion::Classic:</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            dir_iter = boost::filesystem::directory_iterator(<span class="stringliteral">&quot;./wam_files/classic&quot;</span>);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">case</span> WoWVersion::PTR:</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            dir_iter = boost::filesystem::directory_iterator(<span class="stringliteral">&quot;./wam_files/ptr&quot;</span>);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">auto</span> addons = std::vector&lt;Addon&gt;{};</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">auto</span> range = boost::make_iterator_range(dir_iter, {});</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">for</span> (boost::filesystem::directory_entry &amp;entry: range) {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        std::cout &lt;&lt; entry.path().filename() &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    }</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">return</span> addons;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="class_addon.html#a3b5d8c55269c556174c29db7a3250212">   59</a></span>&#160;std::string <a class="code" href="class_addon.html#a3b5d8c55269c556174c29db7a3250212">Addon::get_path</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordflow">return</span> this-&gt;<a class="code" href="class_addon.html#ad581a9a06a91b8afbd1e82a886d16ef6">m_path</a>;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="class_addon.html#a340441076bc1ea2f149d0f9566f75b86">   63</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_addon.html#a340441076bc1ea2f149d0f9566f75b86">Addon::set_path</a>(<span class="keyword">const</span> std::string &amp;path) {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    this-&gt;<a class="code" href="class_addon.html#ad581a9a06a91b8afbd1e82a886d16ef6">m_path</a> = path;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="addon_8cpp.html#a2b7c5a160e10a6c60b2c02b802c99f63">   67</a></span>&#160;std::ostream &amp;<a class="code" href="addon_8cpp.html#a2b7c5a160e10a6c60b2c02b802c99f63">operator&lt;&lt;</a>(std::ostream &amp;os, <span class="keyword">const</span> <a class="code" href="class_addon.html">Addon</a> &amp;addon) {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    std::stringstream ss;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    ss &lt;&lt; addon.<a class="code" href="class_addon.html#ab0b89f2d19533a9455a12124cee42090">m_addonName</a> + <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    ss &lt;&lt; addon.<a class="code" href="class_addon.html#af4be394d92912f7c9190757f793be37b">m_interface_version</a> + <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    ss &lt;&lt; addon.<a class="code" href="class_addon.html#a27012797cf6e4e65c918d1d64af1189e">m_description</a> + <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    os &lt;&lt; ss.str();</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">return</span> os;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="class_addon.html#a8120e23d1304b84f4860ba78248ea68d">   76</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_addon.html#a8120e23d1304b84f4860ba78248ea68d">Addon::make_wam</a>(<span class="keyword">const</span> std::string &amp;p_folder_path) {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    lt::file_storage fs;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="class_addon.html#a426cb6d87a80eff6047b3f3f9ba4cfb4">   81</a></span>&#160;<a class="code" href="class_response.html">Response&lt;std::vector&lt;Addon&gt;</a>&gt; <a class="code" href="class_addon.html#a426cb6d87a80eff6047b3f3f9ba4cfb4">Addon::get_remote_addons</a>() {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    httplib::Client client(<a class="code" href="class_settings_manager.html#adb77ecbdd66df4268117a1d8b0c466ea">SettingsManager::API_IP</a>, 3000);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    std::vector&lt;Addon&gt; addons{};</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keyword">auto</span> result = client.Get(<span class="stringliteral">&quot;/api/addons&quot;</span>);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">if</span>(result &amp;&amp; result-&gt;status == 200) {</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> Json::Value &amp;addon : <a class="code" href="namespaceutils.html#aeef47c9ad14b3bca5b107053784e4df4">utils::string_to_json</a>(result-&gt;body)) {</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            addons.emplace_back(addon);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        }</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <a class="code" href="class_response.html">Response&lt;std::vector&lt;Addon&gt;</a>&gt; response(<span class="stringliteral">&quot;200 OK&quot;</span>, result-&gt;status, addons);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordflow">return</span> response;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    }</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <a class="code" href="class_response.html">Response&lt;std::vector&lt;Addon&gt;</a>&gt; response(result-&gt;body, result-&gt;status, addons);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordflow">return</span> response;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;}</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="class_addon.html#ac4632ee376f1cc46beb352fda2b8ab98">   99</a></span>&#160;<a class="code" href="class_response.html">Response&lt;Addon&gt;</a> <a class="code" href="class_addon.html#ac4632ee376f1cc46beb352fda2b8ab98">Addon::get_addon_by_name</a>(<span class="keyword">const</span> std::string &amp;p_addon_name) {</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    httplib::Client client(<a class="code" href="class_settings_manager.html#adb77ecbdd66df4268117a1d8b0c466ea">SettingsManager::API_IP</a>, 3000);</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keyword">auto</span> result = client.Get(std::string(<span class="stringliteral">&quot;/api/addons?name=&quot;</span> + p_addon_name).c_str());</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordflow">if</span>(result &amp;&amp; result-&gt;status == 200) {</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        Json::Value root = <a class="code" href="namespaceutils.html#aeef47c9ad14b3bca5b107053784e4df4">utils::string_to_json</a>(result-&gt;body);</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <a class="code" href="class_addon.html">Addon</a> addon(root);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <a class="code" href="class_response.html">Response&lt;Addon&gt;</a> response(<span class="stringliteral">&quot;200 OK&quot;</span>, result-&gt;status, addon);</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keywordflow">return</span> response;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    }</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <a class="code" href="class_addon.html">Addon</a> *addon = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <a class="code" href="class_response.html">Response&lt;Addon&gt;</a> response(result-&gt;body, result-&gt;status, *addon);</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keywordflow">return</span> response;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    }</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;}</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="class_addon.html#a88955a15004a63f14f00ad016c761823">   20</a></span>&#160;<a class="code" href="class_addon.html">Addon</a> <a class="code" href="class_addon.html#a88955a15004a63f14f00ad016c761823">Addon::create_addon</a>(<span class="keyword">const</span> std::string &amp;addon_folder_path) {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_addon.html">Addon</a>{};</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="class_addon.html#adff71c4195ba01ef3589bd4b669b7e55">   24</a></span>&#160;<a class="code" href="class_addon.html#a400f8522ea8b3e4077ef38b86e4830b8">Addon::Addon</a>(<span class="keyword">const</span> int64_t &amp;<span class="keywordtype">id</span>, <span class="keyword">const</span> std::string &amp;addon_name, <span class="keyword">const</span> std::string &amp;addon_version,</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;             <span class="keyword">const</span> std::string &amp;interface_version, <span class="keyword">const</span> std::string &amp;addon_note,</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;             <span class="keyword">const</span> <a class="code" href="class_addon.html#ae0cf84199558dea5057b67c36104a22b">WoWVersion</a> &amp;wow_version) {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    this-&gt;<a class="code" href="class_addon.html#ab0b89f2d19533a9455a12124cee42090">m_addonName</a> = addon_name;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    this-&gt;<a class="code" href="class_addon.html#af4be394d92912f7c9190757f793be37b">m_interface_version</a> = interface_version;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    this-&gt;<a class="code" href="class_addon.html#a27012797cf6e4e65c918d1d64af1189e">m_description</a> = addon_note;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    this-&gt;<a class="code" href="class_addon.html#a9aa19263d84bde127595ab4c33c33062">m_addon_version</a> = addon_version;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    this-&gt;<a class="code" href="class_addon.html#a9419b4ed4786a299e4d67bea963162e0">m_wow_version</a> = wow_version;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="class_addon.html#a9e0f007c8a73b9d8dc6acb5014badcac">   35</a></span>&#160;<a class="code" href="class_addon.html#a400f8522ea8b3e4077ef38b86e4830b8">Addon::Addon</a>(<span class="keyword">const</span> Json::Value &amp;addon_json) {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    this-&gt;<a class="code" href="class_addon.html#ab0b89f2d19533a9455a12124cee42090">m_addonName</a> = addon_json[<span class="stringliteral">&quot;name&quot;</span>].asString();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    this-&gt;<a class="code" href="class_addon.html#a27012797cf6e4e65c918d1d64af1189e">m_description</a> = addon_json[<span class="stringliteral">&quot;description&quot;</span>].asString();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    this-&gt;<a class="code" href="class_addon.html#a9aa19263d84bde127595ab4c33c33062">m_addon_version</a> = addon_json[<span class="stringliteral">&quot;version&quot;</span>].asString();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    this-&gt;<a class="code" href="class_addon.html#a50add4d2009ef859fea43b429686665a">m_torrent_info</a> = addon_json[<span class="stringliteral">&quot;torrent_info&quot;</span>].asString();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    this-&gt;<a class="code" href="class_addon.html#a9419b4ed4786a299e4d67bea963162e0">m_wow_version</a> = WoWVersion::Retail;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="class_addon.html#a29a922d06780a67d9877171f84558c16">   43</a></span>&#160;std::vector&lt;Addon&gt; <a class="code" href="class_addon.html#a29a922d06780a67d9877171f84558c16">Addon::get_installed_adddons</a>(<span class="keyword">const</span> <a class="code" href="class_addon.html#ae0cf84199558dea5057b67c36104a22b">WoWVersion</a> &amp;wow_version) {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    boost::filesystem::directory_iterator dir_iter;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">switch</span> (wow_version) {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">case</span> WoWVersion::Retail:</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            dir_iter = boost::filesystem::directory_iterator(<span class="stringliteral">&quot;./wam_files/retail&quot;</span>);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordflow">case</span> WoWVersion::Classic:</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            dir_iter = boost::filesystem::directory_iterator(<span class="stringliteral">&quot;./wam_files/classic&quot;</span>);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">case</span> WoWVersion::PTR:</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            dir_iter = boost::filesystem::directory_iterator(<span class="stringliteral">&quot;./wam_files/ptr&quot;</span>);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keyword">auto</span> addons = std::vector&lt;Addon&gt;{};</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">auto</span> range = boost::make_iterator_range(dir_iter, {});</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> boost::filesystem::directory_entry &amp;entry: range) {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        std::cout &lt;&lt; entry.path().filename() &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">return</span> addons;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="class_addon.html#a3b5d8c55269c556174c29db7a3250212">   66</a></span>&#160;std::string <a class="code" href="class_addon.html#a3b5d8c55269c556174c29db7a3250212">Addon::get_path</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">return</span> this-&gt;<a class="code" href="class_addon.html#ad581a9a06a91b8afbd1e82a886d16ef6">m_path</a>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="class_addon.html#a340441076bc1ea2f149d0f9566f75b86">   70</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_addon.html#a340441076bc1ea2f149d0f9566f75b86">Addon::set_path</a>(<span class="keyword">const</span> std::string &amp;path) {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    this-&gt;<a class="code" href="class_addon.html#ad581a9a06a91b8afbd1e82a886d16ef6">m_path</a> = path;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="addon_8cpp.html#a2b7c5a160e10a6c60b2c02b802c99f63">   74</a></span>&#160;std::ostream &amp;<a class="code" href="addon_8cpp.html#a2b7c5a160e10a6c60b2c02b802c99f63">operator&lt;&lt;</a>(std::ostream &amp;os, <span class="keyword">const</span> <a class="code" href="class_addon.html">Addon</a> &amp;addon) {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    std::stringstream ss;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    ss &lt;&lt; addon.<a class="code" href="class_addon.html#ab0b89f2d19533a9455a12124cee42090">m_addonName</a> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    ss &lt;&lt; addon.<a class="code" href="class_addon.html#a9aa19263d84bde127595ab4c33c33062">m_addon_version</a> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    ss &lt;&lt; addon.<a class="code" href="class_addon.html#a27012797cf6e4e65c918d1d64af1189e">m_description</a> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    ss &lt;&lt; addon.<a class="code" href="class_addon.html#a50add4d2009ef859fea43b429686665a">m_torrent_info</a> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    os &lt;&lt; ss.str();</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">return</span> os;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="class_addon.html#ae90a9b4724772fd3aeed51625919a059">   84</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_addon.html#ae90a9b4724772fd3aeed51625919a059">Addon::make_wam</a>(<span class="keyword">const</span> std::string &amp;folder_path) {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    this-&gt;<a class="code" href="class_addon.html#ab991e9c4af78564a4319d4fd95fe5de8">generate_torrent_info</a>(folder_path);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="class_addon.html#a426cb6d87a80eff6047b3f3f9ba4cfb4">   88</a></span>&#160;<a class="code" href="class_response.html">Response&lt;std::vector&lt;Addon&gt;</a>&gt; <a class="code" href="class_addon.html#a426cb6d87a80eff6047b3f3f9ba4cfb4">Addon::get_remote_addons</a>() {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keyword">auto</span> client = <a class="code" href="utils_8cpp.html#ac77d8c847265567d68057fd233840a2b">make_client</a>();</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    std::vector&lt;Addon&gt; addons{};</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keyword">auto</span> result = client.Get(<span class="stringliteral">&quot;/api/addons&quot;</span>);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">if</span>(result &amp;&amp; result-&gt;status == 200) {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> Json::Value &amp;addon : <a class="code" href="utils_8cpp.html#a641147c2c76375b86f78d908129e1ff0">string_to_json</a>(result-&gt;body)) {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            addons.emplace_back(addon);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        }</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <a class="code" href="class_response.html">Response&lt;std::vector&lt;Addon&gt;</a>&gt; response(<span class="stringliteral">&quot;200 OK&quot;</span>, result-&gt;status, addons);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordflow">return</span> response;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!result){</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <a class="code" href="class_response.html">Response&lt;std::vector&lt;Addon&gt;</a>&gt; response(<span class="stringliteral">&quot;503 Service Unavailable&quot;</span>, 503, boost::none);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keywordflow">return</span> response;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    }</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <a class="code" href="class_response.html">Response&lt;std::vector&lt;Addon&gt;</a>&gt; response(result-&gt;body, result-&gt;status, boost::none);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keywordflow">return</span> response;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    }</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;}</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="class_addon.html#a1df61099e36bb7b523d6494e942c0fb4">  110</a></span>&#160;<a class="code" href="class_response.html">Response&lt;Addon&gt;</a> <a class="code" href="class_addon.html#a1df61099e36bb7b523d6494e942c0fb4">Addon::get_addon_by_name</a>(<span class="keyword">const</span> std::string &amp;addon_name) {</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keyword">auto</span> client = <a class="code" href="utils_8cpp.html#ac77d8c847265567d68057fd233840a2b">make_client</a>();</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keyword">auto</span> result = client.Get(std::string(<span class="stringliteral">&quot;/api/addons?name=&quot;</span> + addon_name).c_str());</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordflow">if</span>(result &amp;&amp; result-&gt;status == 200) {</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        Json::Value root = <a class="code" href="utils_8cpp.html#a641147c2c76375b86f78d908129e1ff0">string_to_json</a>(result-&gt;body);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <a class="code" href="class_addon.html">Addon</a> addon(root);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <a class="code" href="class_response.html">Response&lt;Addon&gt;</a> response(<span class="stringliteral">&quot;200 OK&quot;</span>, result-&gt;status, addon);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="keywordflow">return</span> response;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    }</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!result){</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <a class="code" href="class_response.html">Response&lt;Addon&gt;</a> response(<span class="stringliteral">&quot;503 Service Unavailable&quot;</span>, 503, boost::none);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="keywordflow">return</span> response;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    }</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <a class="code" href="class_response.html">Response&lt;Addon&gt;</a> response(result-&gt;body, result-&gt;status, boost::none);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <span class="keywordflow">return</span> response;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    }</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;}</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
+<div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="class_addon.html#ab991e9c4af78564a4319d4fd95fe5de8">  129</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_addon.html#ab991e9c4af78564a4319d4fd95fe5de8">Addon::generate_torrent_info</a>(<span class="keyword">const</span> std::string &amp;filepath) {</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    libtorrent::settings_pack settings;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    libtorrent::session ses;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    settings.set_str(libtorrent::settings_pack::user_agent, <span class="stringliteral">&quot;wam/&quot;</span> LIBTORRENT_VERSION);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    ses.apply_settings(settings);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keyword">auto</span> fs = lt::file_storage();</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    boost::filesystem::recursive_directory_iterator dir_iter{filepath};</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keyword">auto</span> range = boost::make_iterator_range(dir_iter, {});</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> boost::filesystem::directory_entry &amp;entry: range) {</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <span class="keywordflow">if</span>(!boost::filesystem::is_directory(entry)){</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;            fs.add_file(entry.path().string(), boost::filesystem::file_size(entry.path()));</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        }</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    }</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keyword">auto</span> t = libtorrent::create_torrent(fs);</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    t.set_comment(this-&gt;<a class="code" href="class_addon.html#a27012797cf6e4e65c918d1d64af1189e">m_description</a>.c_str());</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    t.set_creator(<span class="stringliteral">&quot;WAM Client&quot;</span>);</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    t.add_tracker(<span class="stringliteral">&quot;http://192.168.1.14:8081/announce&quot;</span>);</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    t.set_priv(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    libtorrent::set_piece_hashes(t, <span class="stringliteral">&quot;.&quot;</span>);</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    std::ostringstream out(<span class="stringliteral">&quot;my_torrent.torrent&quot;</span>, std::ios_base::binary);</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    bencode(std::ostream_iterator&lt;char&gt;(out), t.generate());</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    this-&gt;<a class="code" href="class_addon.html#a50add4d2009ef859fea43b429686665a">m_torrent_info</a> = out.str();</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;}</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
+<div class="line"><a name="l00158"></a><span class="lineno"><a class="line" href="class_addon.html#a759584c0a18b223c0e620687d75d405f">  158</a></span>&#160;std::string <a class="code" href="class_addon.html#a759584c0a18b223c0e620687d75d405f">Addon::wow_version_to_string</a>(<span class="keyword">const</span> <a class="code" href="class_addon.html#ae0cf84199558dea5057b67c36104a22b">Addon::WoWVersion</a> &amp;wow_version) {</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="keywordflow">switch</span>(wow_version){</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        <span class="keywordflow">case</span> WoWVersion::Retail:</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;            <span class="keywordflow">return</span> std::string(<span class="stringliteral">&quot;Retail&quot;</span>);</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="keywordflow">case</span> WoWVersion::Classic:</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            <span class="keywordflow">return</span> std::string(<span class="stringliteral">&quot;Classic&quot;</span>);</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <span class="keywordflow">case</span> WoWVersion::PTR:</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            <span class="keywordflow">return</span> std::string(<span class="stringliteral">&quot;PTR&quot;</span>);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;            <span class="keywordflow">return</span> std::string(<span class="stringliteral">&quot;Invalid&quot;</span>);</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    }</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;}</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
+<div class="line"><a name="l00172"></a><span class="lineno"><a class="line" href="class_addon.html#ac3d56cc59c72689c955b82ff69f88ff8">  172</a></span>&#160;<a class="code" href="class_addon.html#ae0cf84199558dea5057b67c36104a22b">Addon::WoWVersion</a> <a class="code" href="class_addon.html#ac3d56cc59c72689c955b82ff69f88ff8">Addon::wow_version_to_enum</a>(<span class="keyword">const</span> std::string &amp;wow_version) {</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="keywordflow">if</span>(wow_version == <span class="stringliteral">&quot;Retail&quot;</span>)</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="keywordflow">return</span> WoWVersion::Retail;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(wow_version == <span class="stringliteral">&quot;Classic&quot;</span>)</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        <span class="keywordflow">return</span> WoWVersion::Classic;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(wow_version == <span class="stringliteral">&quot;PTR&quot;</span>)</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        <span class="keywordflow">return</span> WoWVersion::PTR;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        <span class="keywordflow">return</span> WoWVersion::Invalid;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclass_addon_html_aa695df84b35f206c002665e483eb6675"><div class="ttname"><a href="class_addon.html#aa695df84b35f206c002665e483eb6675">Addon::create_addon</a></div><div class="ttdeci">static Addon create_addon(const std::string &amp;p_addon_folder_path)</div><div class="ttdef"><b>Definition:</b> <a href="addon_8cpp_source.html#l00016">addon.cpp:16</a></div></div>
-<div class="ttc" id="aclass_addon_html_ad581a9a06a91b8afbd1e82a886d16ef6"><div class="ttname"><a href="class_addon.html#ad581a9a06a91b8afbd1e82a886d16ef6">Addon::m_path</a></div><div class="ttdeci">std::string m_path</div><div class="ttdef"><b>Definition:</b> <a href="addon_8h_source.html#l00029">addon.h:29</a></div></div>
-<div class="ttc" id="aclass_addon_html_a9aa19263d84bde127595ab4c33c33062"><div class="ttname"><a href="class_addon.html#a9aa19263d84bde127595ab4c33c33062">Addon::m_addon_version</a></div><div class="ttdeci">std::string m_addon_version</div><div class="ttdef"><b>Definition:</b> <a href="addon_8h_source.html#l00026">addon.h:26</a></div></div>
-<div class="ttc" id="aclass_settings_manager_html_adb77ecbdd66df4268117a1d8b0c466ea"><div class="ttname"><a href="class_settings_manager.html#adb77ecbdd66df4268117a1d8b0c466ea">SettingsManager::API_IP</a></div><div class="ttdeci">const static std::string API_IP</div><div class="ttdef"><b>Definition:</b> <a href="settingsmanager_8h_source.html#l00025">settingsmanager.h:25</a></div></div>
-<div class="ttc" id="aclass_addon_html_a3b5d8c55269c556174c29db7a3250212"><div class="ttname"><a href="class_addon.html#a3b5d8c55269c556174c29db7a3250212">Addon::get_path</a></div><div class="ttdeci">std::string get_path() const</div><div class="ttdef"><b>Definition:</b> <a href="addon_8cpp_source.html#l00059">addon.cpp:59</a></div></div>
-<div class="ttc" id="aclass_addon_html_ac2a13f73340e601365be03deab92b599"><div class="ttname"><a href="class_addon.html#ac2a13f73340e601365be03deab92b599">Addon::get_installed_adddons</a></div><div class="ttdeci">static std::vector&lt; Addon &gt; get_installed_adddons(const WoWVersion &amp;p_wow_version)</div><div class="ttdef"><b>Definition:</b> <a href="addon_8cpp_source.html#l00038">addon.cpp:38</a></div></div>
+<div class="ttc" id="aclass_addon_html_a759584c0a18b223c0e620687d75d405f"><div class="ttname"><a href="class_addon.html#a759584c0a18b223c0e620687d75d405f">Addon::wow_version_to_string</a></div><div class="ttdeci">static std::string wow_version_to_string(const WoWVersion &amp;wow_version)</div><div class="ttdef"><b>Definition:</b> <a href="addon_8cpp_source.html#l00158">addon.cpp:158</a></div></div>
+<div class="ttc" id="aclass_addon_html_a1df61099e36bb7b523d6494e942c0fb4"><div class="ttname"><a href="class_addon.html#a1df61099e36bb7b523d6494e942c0fb4">Addon::get_addon_by_name</a></div><div class="ttdeci">static Response&lt; Addon &gt; get_addon_by_name(const std::string &amp;addon_name)</div><div class="ttdef"><b>Definition:</b> <a href="addon_8cpp_source.html#l00110">addon.cpp:110</a></div></div>
+<div class="ttc" id="aclass_addon_html_ad581a9a06a91b8afbd1e82a886d16ef6"><div class="ttname"><a href="class_addon.html#ad581a9a06a91b8afbd1e82a886d16ef6">Addon::m_path</a></div><div class="ttdeci">std::string m_path</div><div class="ttdef"><b>Definition:</b> <a href="addon_8h_source.html#l00030">addon.h:30</a></div></div>
+<div class="ttc" id="aclass_addon_html_a29a922d06780a67d9877171f84558c16"><div class="ttname"><a href="class_addon.html#a29a922d06780a67d9877171f84558c16">Addon::get_installed_adddons</a></div><div class="ttdeci">static std::vector&lt; Addon &gt; get_installed_adddons(const WoWVersion &amp;wow_version)</div><div class="ttdef"><b>Definition:</b> <a href="addon_8cpp_source.html#l00043">addon.cpp:43</a></div></div>
+<div class="ttc" id="aclass_addon_html_a9aa19263d84bde127595ab4c33c33062"><div class="ttname"><a href="class_addon.html#a9aa19263d84bde127595ab4c33c33062">Addon::m_addon_version</a></div><div class="ttdeci">std::string m_addon_version</div><div class="ttdef"><b>Definition:</b> <a href="addon_8h_source.html#l00027">addon.h:27</a></div></div>
+<div class="ttc" id="aclass_addon_html_a3b5d8c55269c556174c29db7a3250212"><div class="ttname"><a href="class_addon.html#a3b5d8c55269c556174c29db7a3250212">Addon::get_path</a></div><div class="ttdeci">std::string get_path() const</div><div class="ttdef"><b>Definition:</b> <a href="addon_8cpp_source.html#l00066">addon.cpp:66</a></div></div>
 <div class="ttc" id="autils_8h_html"><div class="ttname"><a href="utils_8h.html">utils.h</a></div></div>
-<div class="ttc" id="aclass_addon_html_af4be394d92912f7c9190757f793be37b"><div class="ttname"><a href="class_addon.html#af4be394d92912f7c9190757f793be37b">Addon::m_interface_version</a></div><div class="ttdeci">std::string m_interface_version</div><div class="ttdef"><b>Definition:</b> <a href="addon_8h_source.html#l00027">addon.h:27</a></div></div>
-<div class="ttc" id="aclass_addon_html_a27012797cf6e4e65c918d1d64af1189e"><div class="ttname"><a href="class_addon.html#a27012797cf6e4e65c918d1d64af1189e">Addon::m_description</a></div><div class="ttdeci">std::string m_description</div><div class="ttdef"><b>Definition:</b> <a href="addon_8h_source.html#l00028">addon.h:28</a></div></div>
-<div class="ttc" id="aclass_addon_html_ac4632ee376f1cc46beb352fda2b8ab98"><div class="ttname"><a href="class_addon.html#ac4632ee376f1cc46beb352fda2b8ab98">Addon::get_addon_by_name</a></div><div class="ttdeci">static Response&lt; Addon &gt; get_addon_by_name(const std::string &amp;p_addon_name)</div><div class="ttdef"><b>Definition:</b> <a href="addon_8cpp_source.html#l00099">addon.cpp:99</a></div></div>
+<div class="ttc" id="aclass_addon_html_af4be394d92912f7c9190757f793be37b"><div class="ttname"><a href="class_addon.html#af4be394d92912f7c9190757f793be37b">Addon::m_interface_version</a></div><div class="ttdeci">std::string m_interface_version</div><div class="ttdef"><b>Definition:</b> <a href="addon_8h_source.html#l00028">addon.h:28</a></div></div>
+<div class="ttc" id="aclass_addon_html_a27012797cf6e4e65c918d1d64af1189e"><div class="ttname"><a href="class_addon.html#a27012797cf6e4e65c918d1d64af1189e">Addon::m_description</a></div><div class="ttdeci">std::string m_description</div><div class="ttdef"><b>Definition:</b> <a href="addon_8h_source.html#l00029">addon.h:29</a></div></div>
 <div class="ttc" id="aclass_response_html"><div class="ttname"><a href="class_response.html">Response</a></div><div class="ttdef"><b>Definition:</b> <a href="response_8h_source.html#l00012">response.h:12</a></div></div>
-<div class="ttc" id="aclass_addon_html_a340441076bc1ea2f149d0f9566f75b86"><div class="ttname"><a href="class_addon.html#a340441076bc1ea2f149d0f9566f75b86">Addon::set_path</a></div><div class="ttdeci">void set_path(const std::string &amp;path)</div><div class="ttdef"><b>Definition:</b> <a href="addon_8cpp_source.html#l00063">addon.cpp:63</a></div></div>
+<div class="ttc" id="aclass_addon_html_ae90a9b4724772fd3aeed51625919a059"><div class="ttname"><a href="class_addon.html#ae90a9b4724772fd3aeed51625919a059">Addon::make_wam</a></div><div class="ttdeci">void make_wam(const std::string &amp;folder_path)</div><div class="ttdef"><b>Definition:</b> <a href="addon_8cpp_source.html#l00084">addon.cpp:84</a></div></div>
+<div class="ttc" id="aclass_addon_html_a88955a15004a63f14f00ad016c761823"><div class="ttname"><a href="class_addon.html#a88955a15004a63f14f00ad016c761823">Addon::create_addon</a></div><div class="ttdeci">static Addon create_addon(const std::string &amp;addon_folder_path)</div><div class="ttdef"><b>Definition:</b> <a href="addon_8cpp_source.html#l00020">addon.cpp:20</a></div></div>
+<div class="ttc" id="aclass_addon_html_a340441076bc1ea2f149d0f9566f75b86"><div class="ttname"><a href="class_addon.html#a340441076bc1ea2f149d0f9566f75b86">Addon::set_path</a></div><div class="ttdeci">void set_path(const std::string &amp;path)</div><div class="ttdef"><b>Definition:</b> <a href="addon_8cpp_source.html#l00070">addon.cpp:70</a></div></div>
 <div class="ttc" id="aclass_addon_html_ae0cf84199558dea5057b67c36104a22b"><div class="ttname"><a href="class_addon.html#ae0cf84199558dea5057b67c36104a22b">Addon::WoWVersion</a></div><div class="ttdeci">WoWVersion</div><div class="ttdef"><b>Definition:</b> <a href="addon_8h_source.html#l00019">addon.h:19</a></div></div>
-<div class="ttc" id="anamespaceutils_html_aeef47c9ad14b3bca5b107053784e4df4"><div class="ttname"><a href="namespaceutils.html#aeef47c9ad14b3bca5b107053784e4df4">utils::string_to_json</a></div><div class="ttdeci">Json::Value string_to_json(const std::basic_string&lt; char &gt; &amp;string)</div></div>
-<div class="ttc" id="aclass_addon_html_a8120e23d1304b84f4860ba78248ea68d"><div class="ttname"><a href="class_addon.html#a8120e23d1304b84f4860ba78248ea68d">Addon::make_wam</a></div><div class="ttdeci">void make_wam(const std::string &amp;p_folder_path)</div><div class="ttdef"><b>Definition:</b> <a href="addon_8cpp_source.html#l00076">addon.cpp:76</a></div></div>
+<div class="ttc" id="aclass_addon_html_a50add4d2009ef859fea43b429686665a"><div class="ttname"><a href="class_addon.html#a50add4d2009ef859fea43b429686665a">Addon::m_torrent_info</a></div><div class="ttdeci">std::string m_torrent_info</div><div class="ttdef"><b>Definition:</b> <a href="addon_8h_source.html#l00031">addon.h:31</a></div></div>
+<div class="ttc" id="aclass_addon_html_ac3d56cc59c72689c955b82ff69f88ff8"><div class="ttname"><a href="class_addon.html#ac3d56cc59c72689c955b82ff69f88ff8">Addon::wow_version_to_enum</a></div><div class="ttdeci">static WoWVersion wow_version_to_enum(const std::string &amp;wow_version)</div><div class="ttdef"><b>Definition:</b> <a href="addon_8cpp_source.html#l00172">addon.cpp:172</a></div></div>
 <div class="ttc" id="aclass_addon_html_a400f8522ea8b3e4077ef38b86e4830b8"><div class="ttname"><a href="class_addon.html#a400f8522ea8b3e4077ef38b86e4830b8">Addon::Addon</a></div><div class="ttdeci">Addon()=default</div></div>
-<div class="ttc" id="aclass_addon_html_a426cb6d87a80eff6047b3f3f9ba4cfb4"><div class="ttname"><a href="class_addon.html#a426cb6d87a80eff6047b3f3f9ba4cfb4">Addon::get_remote_addons</a></div><div class="ttdeci">static Response&lt; std::vector&lt; Addon &gt; &gt; get_remote_addons()</div><div class="ttdef"><b>Definition:</b> <a href="addon_8cpp_source.html#l00081">addon.cpp:81</a></div></div>
-<div class="ttc" id="aclass_addon_html_a9419b4ed4786a299e4d67bea963162e0"><div class="ttname"><a href="class_addon.html#a9419b4ed4786a299e4d67bea963162e0">Addon::m_wow_version</a></div><div class="ttdeci">WoWVersion m_wow_version</div><div class="ttdef"><b>Definition:</b> <a href="addon_8h_source.html#l00031">addon.h:31</a></div></div>
-<div class="ttc" id="aaddon_8cpp_html_a2b7c5a160e10a6c60b2c02b802c99f63"><div class="ttname"><a href="addon_8cpp.html#a2b7c5a160e10a6c60b2c02b802c99f63">operator&lt;&lt;</a></div><div class="ttdeci">std::ostream &amp; operator&lt;&lt;(std::ostream &amp;os, const Addon &amp;addon)</div><div class="ttdef"><b>Definition:</b> <a href="addon_8cpp_source.html#l00067">addon.cpp:67</a></div></div>
+<div class="ttc" id="aclass_addon_html_a426cb6d87a80eff6047b3f3f9ba4cfb4"><div class="ttname"><a href="class_addon.html#a426cb6d87a80eff6047b3f3f9ba4cfb4">Addon::get_remote_addons</a></div><div class="ttdeci">static Response&lt; std::vector&lt; Addon &gt; &gt; get_remote_addons()</div><div class="ttdef"><b>Definition:</b> <a href="addon_8cpp_source.html#l00088">addon.cpp:88</a></div></div>
+<div class="ttc" id="aclass_addon_html_a9419b4ed4786a299e4d67bea963162e0"><div class="ttname"><a href="class_addon.html#a9419b4ed4786a299e4d67bea963162e0">Addon::m_wow_version</a></div><div class="ttdeci">WoWVersion m_wow_version</div><div class="ttdef"><b>Definition:</b> <a href="addon_8h_source.html#l00032">addon.h:32</a></div></div>
+<div class="ttc" id="aaddon_8cpp_html_a2b7c5a160e10a6c60b2c02b802c99f63"><div class="ttname"><a href="addon_8cpp.html#a2b7c5a160e10a6c60b2c02b802c99f63">operator&lt;&lt;</a></div><div class="ttdeci">std::ostream &amp; operator&lt;&lt;(std::ostream &amp;os, const Addon &amp;addon)</div><div class="ttdef"><b>Definition:</b> <a href="addon_8cpp_source.html#l00074">addon.cpp:74</a></div></div>
 <div class="ttc" id="aaddon_8h_html"><div class="ttname"><a href="addon_8h.html">addon.h</a></div></div>
+<div class="ttc" id="autils_8cpp_html_ac77d8c847265567d68057fd233840a2b"><div class="ttname"><a href="utils_8cpp.html#ac77d8c847265567d68057fd233840a2b">make_client</a></div><div class="ttdeci">httplib::Client make_client()</div><div class="ttdef"><b>Definition:</b> <a href="utils_8cpp_source.html#l00031">utils.cpp:31</a></div></div>
+<div class="ttc" id="autils_8cpp_html_a641147c2c76375b86f78d908129e1ff0"><div class="ttname"><a href="utils_8cpp.html#a641147c2c76375b86f78d908129e1ff0">string_to_json</a></div><div class="ttdeci">Json::Value string_to_json(const std::string &amp;string)</div><div class="ttdef"><b>Definition:</b> <a href="utils_8cpp_source.html#l00015">utils.cpp:15</a></div></div>
+<div class="ttc" id="aclass_addon_html_ab991e9c4af78564a4319d4fd95fe5de8"><div class="ttname"><a href="class_addon.html#ab991e9c4af78564a4319d4fd95fe5de8">Addon::generate_torrent_info</a></div><div class="ttdeci">void generate_torrent_info(const std::string &amp;filepath)</div><div class="ttdef"><b>Definition:</b> <a href="addon_8cpp_source.html#l00129">addon.cpp:129</a></div></div>
 <div class="ttc" id="aclass_addon_html"><div class="ttname"><a href="class_addon.html">Addon</a></div><div class="ttdef"><b>Definition:</b> <a href="addon_8h_source.html#l00016">addon.h:16</a></div></div>
-<div class="ttc" id="aclass_addon_html_ab0b89f2d19533a9455a12124cee42090"><div class="ttname"><a href="class_addon.html#ab0b89f2d19533a9455a12124cee42090">Addon::m_addonName</a></div><div class="ttdeci">std::string m_addonName</div><div class="ttdef"><b>Definition:</b> <a href="addon_8h_source.html#l00025">addon.h:25</a></div></div>
+<div class="ttc" id="aclass_addon_html_ab0b89f2d19533a9455a12124cee42090"><div class="ttname"><a href="class_addon.html#ab0b89f2d19533a9455a12124cee42090">Addon::m_addonName</a></div><div class="ttdeci">std::string m_addonName</div><div class="ttdef"><b>Definition:</b> <a href="addon_8h_source.html#l00026">addon.h:26</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

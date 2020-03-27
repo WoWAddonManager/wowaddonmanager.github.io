@@ -23,5 +23,8 @@ var dir_b6a25edd2f6e422db21dc45a01102808 =
     [ "upload_addon_dialog.h", "upload__addon__dialog_8h.html", [
       [ "upload_addon_dialog", "classupload__addon__dialog.html", "classupload__addon__dialog" ]
     ] ],
+    [ "user.h", "user_8h.html", [
+      [ "User", "class_user.html", "class_user" ]
+    ] ],
     [ "utils.h", "utils_8h.html", "utils_8h" ]
 ];

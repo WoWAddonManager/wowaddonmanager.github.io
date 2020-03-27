@@ -90,35 +90,52 @@ $(document).ready(function(){initNavTree('utils_8cpp_source.html',''); initResiz
 <a href="utils_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;json/json.h&gt;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="utils_8h.html">utils.h</a>&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="namespaceutils.html#ae23aa6b0a282cd1d24b948d98819b807">    5</a></span>&#160;std::string <a class="code" href="namespaceutils.html#ae23aa6b0a282cd1d24b948d98819b807">utils::read_file_to_string</a>(<span class="keyword">const</span> std::string &amp;path) {</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    std::ifstream file = std::ifstream(path, std::ios::in);</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    std::stringstream ss;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    ss &lt;&lt; file.rdbuf();</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    std::string content = ss.str();</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keywordflow">return</span> content;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;}</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;Json::Value <a class="code" href="namespaceutils.html#aeef47c9ad14b3bca5b107053784e4df4">utils::string_to_json</a>(<span class="keyword">const</span> std::string &amp;<span class="keywordtype">string</span>){</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    Json::Value json;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    Json::CharReaderBuilder builder;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    Json::CharReader *reader = builder.newCharReader();</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    std::string errors;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">bool</span> parsed = reader-&gt;parse(<span class="keywordtype">string</span>.c_str(), <span class="keywordtype">string</span>.c_str() + <span class="keywordtype">string</span>.size(), &amp;json,</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                                &amp;errors);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">if</span> (!parsed) {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        std::cout &lt;&lt; errors &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordflow">return</span> json[<span class="stringliteral">&quot;error&quot;</span>];</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    }</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordflow">return</span> json;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    }</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="settingsmanager_8h.html">settingsmanager.h</a>&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QtWidgets/QMessageBox&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="utils_8h.html">utils.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="utils_8h.html#a8a19f3b0f1efd3f11890720150d893e0">    7</a></span>&#160;std::string <a class="code" href="utils_8cpp.html#a8a19f3b0f1efd3f11890720150d893e0">read_file_to_string</a>(<span class="keyword">const</span> std::string &amp;path) {</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    std::ifstream file = std::ifstream(path, std::ios::in);</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    std::stringstream ss;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    ss &lt;&lt; file.rdbuf();</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    std::string content = ss.str();</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordflow">return</span> content;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;}</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="utils_8cpp.html#a641147c2c76375b86f78d908129e1ff0">   15</a></span>&#160;Json::Value <a class="code" href="utils_8cpp.html#a641147c2c76375b86f78d908129e1ff0">string_to_json</a>(<span class="keyword">const</span> std::string &amp;<span class="keywordtype">string</span>){</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    Json::Value json;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    Json::CharReaderBuilder builder;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    Json::CharReader *reader = builder.newCharReader();</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    std::string errors;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">bool</span> parsed = reader-&gt;parse(<span class="keywordtype">string</span>.c_str(), <span class="keywordtype">string</span>.c_str() + <span class="keywordtype">string</span>.size(), &amp;json,</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                                &amp;errors);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">if</span> (!parsed) {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        std::cout &lt;&lt; errors &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordflow">return</span> json[<span class="stringliteral">&quot;error&quot;</span>];</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    }</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordflow">return</span> json;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    }</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="utils_8h.html#ac77d8c847265567d68057fd233840a2b">   31</a></span>&#160;httplib::Client <a class="code" href="utils_8cpp.html#ac77d8c847265567d68057fd233840a2b">make_client</a>() {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">return</span> httplib::Client(<a class="code" href="class_settings_manager.html#abb31000cc75a1b554cf590d1fff316a0">SettingsManager::API_IP</a>, <a class="code" href="class_settings_manager.html#a8afaf9fe6b2636fbe1928a19bdbbe3f3">SettingsManager::API_PORT</a>);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="utils_8h.html#ab64f10c52eb78946431a372d2e3a9983">   35</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="utils_8cpp.html#ab64f10c52eb78946431a372d2e3a9983">make_message_box</a>(<span class="keyword">const</span> std::string &amp;message) {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    QMessageBox msg;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    msg.setText(QString::fromStdString(message));</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    msg.exec();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="autils_8cpp_html_a8a19f3b0f1efd3f11890720150d893e0"><div class="ttname"><a href="utils_8cpp.html#a8a19f3b0f1efd3f11890720150d893e0">read_file_to_string</a></div><div class="ttdeci">std::string read_file_to_string(const std::string &amp;path)</div><div class="ttdef"><b>Definition:</b> <a href="utils_8cpp_source.html#l00007">utils.cpp:7</a></div></div>
 <div class="ttc" id="autils_8h_html"><div class="ttname"><a href="utils_8h.html">utils.h</a></div></div>
-<div class="ttc" id="anamespaceutils_html_ae23aa6b0a282cd1d24b948d98819b807"><div class="ttname"><a href="namespaceutils.html#ae23aa6b0a282cd1d24b948d98819b807">utils::read_file_to_string</a></div><div class="ttdeci">std::string read_file_to_string(const std::string &amp;path)</div><div class="ttdef"><b>Definition:</b> <a href="utils_8cpp_source.html#l00005">utils.cpp:5</a></div></div>
-<div class="ttc" id="anamespaceutils_html_aeef47c9ad14b3bca5b107053784e4df4"><div class="ttname"><a href="namespaceutils.html#aeef47c9ad14b3bca5b107053784e4df4">utils::string_to_json</a></div><div class="ttdeci">Json::Value string_to_json(const std::basic_string&lt; char &gt; &amp;string)</div></div>
+<div class="ttc" id="aclass_settings_manager_html_a8afaf9fe6b2636fbe1928a19bdbbe3f3"><div class="ttname"><a href="class_settings_manager.html#a8afaf9fe6b2636fbe1928a19bdbbe3f3">SettingsManager::API_PORT</a></div><div class="ttdeci">static constexpr int API_PORT</div><div class="ttdef"><b>Definition:</b> <a href="settingsmanager_8h_source.html#l00028">settingsmanager.h:28</a></div></div>
+<div class="ttc" id="aclass_settings_manager_html_abb31000cc75a1b554cf590d1fff316a0"><div class="ttname"><a href="class_settings_manager.html#abb31000cc75a1b554cf590d1fff316a0">SettingsManager::API_IP</a></div><div class="ttdeci">static constexpr char API_IP[]</div><div class="ttdef"><b>Definition:</b> <a href="settingsmanager_8h_source.html#l00027">settingsmanager.h:27</a></div></div>
+<div class="ttc" id="asettingsmanager_8h_html"><div class="ttname"><a href="settingsmanager_8h.html">settingsmanager.h</a></div></div>
+<div class="ttc" id="autils_8cpp_html_ab64f10c52eb78946431a372d2e3a9983"><div class="ttname"><a href="utils_8cpp.html#ab64f10c52eb78946431a372d2e3a9983">make_message_box</a></div><div class="ttdeci">void make_message_box(const std::string &amp;message)</div><div class="ttdef"><b>Definition:</b> <a href="utils_8cpp_source.html#l00035">utils.cpp:35</a></div></div>
+<div class="ttc" id="autils_8cpp_html_ac77d8c847265567d68057fd233840a2b"><div class="ttname"><a href="utils_8cpp.html#ac77d8c847265567d68057fd233840a2b">make_client</a></div><div class="ttdeci">httplib::Client make_client()</div><div class="ttdef"><b>Definition:</b> <a href="utils_8cpp_source.html#l00031">utils.cpp:31</a></div></div>
+<div class="ttc" id="autils_8cpp_html_a641147c2c76375b86f78d908129e1ff0"><div class="ttname"><a href="utils_8cpp.html#a641147c2c76375b86f78d908129e1ff0">string_to_json</a></div><div class="ttdeci">Json::Value string_to_json(const std::string &amp;string)</div><div class="ttdef"><b>Definition:</b> <a href="utils_8cpp_source.html#l00015">utils.cpp:15</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

@@ -87,24 +87,24 @@ $(document).ready(function(){initNavTree('utils_8h_source.html',''); initResizab
 <div class="title">utils.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="utils_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;json/json.h&gt;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#ifndef WAM_UTILS_H</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#define WAM_UTILS_H</span></div>
+<a href="utils_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef WAM_UTILS_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define WAM_UTILS_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;json/json.h&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;httplib.h&quot;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="namespaceutils.html">    7</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceutils.html">utils</a> {</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    std::string <a class="code" href="namespaceutils.html#ae23aa6b0a282cd1d24b948d98819b807">read_file_to_string</a>(<span class="keyword">const</span> std::string &amp;path);</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    Json::Value <a class="code" href="namespaceutils.html#aeef47c9ad14b3bca5b107053784e4df4">string_to_json</a>(<span class="keyword">const</span> std::basic_string&lt;char&gt; &amp;<span class="keywordtype">string</span>);</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;}</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;std::string <a class="code" href="utils_8h.html#a8a19f3b0f1efd3f11890720150d893e0">read_file_to_string</a>(<span class="keyword">const</span> std::string &amp;path);</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;Json::Value <a class="code" href="utils_8h.html#af050bea4830a81a2575f6db1cf986d82">string_to_json</a>(<span class="keyword">const</span> std::basic_string&lt;char&gt; &amp;<span class="keywordtype">string</span>);</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;httplib::Client <a class="code" href="utils_8h.html#ac77d8c847265567d68057fd233840a2b">make_client</a>();</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keywordtype">void</span> <a class="code" href="utils_8h.html#ab64f10c52eb78946431a372d2e3a9983">make_message_box</a>(<span class="keyword">const</span> std::string &amp;message);</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#endif //WAM_UTILS_H</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#endif //WAM_UTILS_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="anamespaceutils_html_ae23aa6b0a282cd1d24b948d98819b807"><div class="ttname"><a href="namespaceutils.html#ae23aa6b0a282cd1d24b948d98819b807">utils::read_file_to_string</a></div><div class="ttdeci">std::string read_file_to_string(const std::string &amp;path)</div><div class="ttdef"><b>Definition:</b> <a href="utils_8cpp_source.html#l00005">utils.cpp:5</a></div></div>
-<div class="ttc" id="anamespaceutils_html_aeef47c9ad14b3bca5b107053784e4df4"><div class="ttname"><a href="namespaceutils.html#aeef47c9ad14b3bca5b107053784e4df4">utils::string_to_json</a></div><div class="ttdeci">Json::Value string_to_json(const std::basic_string&lt; char &gt; &amp;string)</div></div>
-<div class="ttc" id="anamespaceutils_html"><div class="ttname"><a href="namespaceutils.html">utils</a></div><div class="ttdef"><b>Definition:</b> <a href="utils_8h_source.html#l00007">utils.h:7</a></div></div>
+<div class="ttc" id="autils_8h_html_ac77d8c847265567d68057fd233840a2b"><div class="ttname"><a href="utils_8h.html#ac77d8c847265567d68057fd233840a2b">make_client</a></div><div class="ttdeci">httplib::Client make_client()</div><div class="ttdef"><b>Definition:</b> <a href="utils_8cpp_source.html#l00031">utils.cpp:31</a></div></div>
+<div class="ttc" id="autils_8h_html_af050bea4830a81a2575f6db1cf986d82"><div class="ttname"><a href="utils_8h.html#af050bea4830a81a2575f6db1cf986d82">string_to_json</a></div><div class="ttdeci">Json::Value string_to_json(const std::basic_string&lt; char &gt; &amp;string)</div></div>
+<div class="ttc" id="autils_8h_html_ab64f10c52eb78946431a372d2e3a9983"><div class="ttname"><a href="utils_8h.html#ab64f10c52eb78946431a372d2e3a9983">make_message_box</a></div><div class="ttdeci">void make_message_box(const std::string &amp;message)</div><div class="ttdef"><b>Definition:</b> <a href="utils_8cpp_source.html#l00035">utils.cpp:35</a></div></div>
+<div class="ttc" id="autils_8h_html_a8a19f3b0f1efd3f11890720150d893e0"><div class="ttname"><a href="utils_8h.html#a8a19f3b0f1efd3f11890720150d893e0">read_file_to_string</a></div><div class="ttdeci">std::string read_file_to_string(const std::string &amp;path)</div><div class="ttdef"><b>Definition:</b> <a href="utils_8cpp_source.html#l00007">utils.cpp:7</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

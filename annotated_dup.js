@@ -7,5 +7,6 @@ var annotated_dup =
     [ "SettingsManager", "class_settings_manager.html", "class_settings_manager" ],
     [ "Ui_MainWindow", "class_ui___main_window.html", "class_ui___main_window" ],
     [ "Ui_upload_addon_dialog", "class_ui__upload__addon__dialog.html", "class_ui__upload__addon__dialog" ],
-    [ "upload_addon_dialog", "classupload__addon__dialog.html", "classupload__addon__dialog" ]
+    [ "upload_addon_dialog", "classupload__addon__dialog.html", "classupload__addon__dialog" ],
+    [ "User", "class_user.html", "class_user" ]
 ];
